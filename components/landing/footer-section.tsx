@@ -50,7 +50,7 @@ export function FooterSection() {
             {/* Brand Column */}
             <div className="col-span-2">
               <a href="#" className="inline-flex items-center gap-2 mb-6">
-                <img src="/logo.png" alt="Logo" className="h-10 w-auto" />
+                <img src="/logo.png" alt="Logo" className="h-14 w-auto" />
               </a>
 
               <p className="text-muted-foreground leading-relaxed mb-8 max-w-xs">
