@@ -11,7 +11,16 @@ import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { PricingSection } from "@/components/landing/pricing-section";
 import { CtaSection } from "@/components/landing/cta-section";
 import { FooterSection } from "@/components/landing/footer-section";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Web Design & Development Services | Floxia Studio USA",
+  description: "Explore Floxia Studio's full range of web services: custom development, Shopify, WordPress, AI chatbots, dashboards, SEO, booking systems & e-commerce. Built for US businesses.",
+  keywords: ["custom website development services", "Shopify development", "WordPress agency", "AI chatbot integration", "web design services USA"],
+  alternates: {
+    canonical: "https://floxiastudio.com/services",
+  },
+};
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-x-hidden noise-overlay">

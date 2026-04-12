@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { AnimatedSphere } from "./animated-sphere";
+import Link from "next/link";
 
-const words = ["create", "build", "scale", "ship"];
+const words = ["Actually Need", "Truly Want", "Deserve", "Demand"];
 
 export function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -55,7 +56,7 @@ export function HeroSection() {
         ))}
       </div>
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 py-32 lg:py-40">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 py-24 sm:py-32 lg:py-40">
         {/* Eyebrow */}
         <div
           className={`mb-8 transition-all duration-700 ${
@@ -64,46 +65,46 @@ export function HeroSection() {
         >
           <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground">
             <span className="w-8 h-px bg-foreground/30" />
-            The platform for modern teams
+            Floxia Studio
           </span>
         </div>
 
         {/* Main headline */}
-        <div className="mb-12">
+        <div className="mb-8 sm:mb-12">
           <h1
-            className={`text-[clamp(3rem,12vw,10rem)] font-display leading-[0.9] tracking-tight transition-all duration-1000 ${
+            className={`text-[clamp(2.25rem,6vw,7rem)] font-display leading-[1.1] tracking-tight transition-all duration-1000 ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8"
             }`}
           >
-            <span className="block">We are Floxia Studio</span>
-            <span className="block">
-              to{" "}
-              <span className="relative inline-block">
+            <span className="block">We Build</span>
+            <span className="block mt-2 sm:mt-0">
+              What Businesses{" "}
+              <span className="relative inline-block whitespace-nowrap">
                 <span key={wordIndex} className="inline-flex">
                   {words[wordIndex].split("").map((char, i) => (
                     <span
                       key={`${wordIndex}-${i}`}
                       className="inline-block animate-char-in"
                       style={{
-                        animationDelay: `${i * 50}ms`,
+                        animationDelay: `${i * 30}ms`,
                       }}
                     >
-                      {char}
+                      {char === " " ? "\u00A0" : char}
                     </span>
                   ))}
                 </span>
-                <span className="absolute -bottom-2 left-0 right-0 h-3 bg-foreground/10" />
+                <span className="absolute -bottom-1 sm:-bottom-2 left-0 right-0 h-2 sm:h-3 bg-foreground/10" />
               </span>
             </span>
           </h1>
         </div>
 
         {/* Description */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-end">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-24 lg:items-end">
           <p
-            className={`text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-xl transition-all duration-700 delay-200 ${
+            className={`text-md sm:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-xl transition-all duration-700 delay-200 ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-4"
@@ -117,33 +118,36 @@ export function HeroSection() {
 
           {/* CTAs */}
           <div
-            className={`flex flex-col sm:flex-row items-start gap-4 transition-all duration-700 delay-300 ${
+            className={`flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 transition-all duration-700 delay-300 w-full sm:w-auto ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-4"
             }`}
           >
-            <Button
-              size="lg"
-              className="bg-foreground hover:bg-foreground/90 text-background px-8 h-14 text-base rounded-full group"
-            >
-              Start free trial
-              <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-            </Button>
+            <Link href="/onboarding" className="w-full sm:w-auto">
+              <Button
+                size="lg"
+                className="bg-foreground hover:bg-foreground/90 text-background px-6 sm:px-8 h-12 sm:h-14 text-sm sm:text-base rounded-full group w-full"
+              >
+                Start Your Project
+                <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </Link>
             <Button
               size="lg"
               variant="outline"
-              className="h-14 px-8 text-base rounded-full border-foreground/20 hover:bg-foreground/5"
+              className="px-6 sm:px-8 h-12 sm:h-14 text-sm sm:text-base rounded-full border-foreground/20 hover:bg-foreground/5 group w-full sm:w-auto"
             >
-              Watch demo
+              See Our Work
+              <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
             </Button>
           </div>
         </div>
       </div>
 
       {/* Stats marquee - full width outside container */}
-      <div
-        className={`absolute bottom-24 left-0 right-0 transition-all duration-700 delay-500 ${
+      {/* <div
+        className={`absolute bottom-24  left-0 right-0 transition-all duration-700 delay-500 ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}
       >
@@ -182,7 +186,7 @@ export function HeroSection() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* Scroll indicator */}
     </section>

@@ -11,7 +11,16 @@ import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { PricingSection } from "@/components/landing/pricing-section";
 import { CtaSection } from "@/components/landing/cta-section";
 import { FooterSection } from "@/components/landing/footer-section";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "About Floxia Studio | Expert Web Design & Dev Team USA",
+  description: "Meet the team behind Floxia Studio — web designers, developers & SEO specialists building custom websites, Shopify stores & AI-integrated platforms for US businesses.",
+  keywords: ["web design agency team USA", "professional web developers", "branded web design", "full-stack web agency"],
+  alternates: {
+    canonical: "https://floxiastudio.com/about",
+  },
+};
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-x-hidden noise-overlay">

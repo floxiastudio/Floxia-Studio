@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -72,12 +73,14 @@ export function Navigation() {
             >
               See Our Work
             </a>
-            <Button
-              size="sm"
-              className={`bg-foreground hover:bg-foreground/90 text-background rounded-full transition-all duration-500 ${isScrolled ? "px-4 h-8 text-xs" : "px-6"}`}
-            >
-              Start Your Project
-            </Button>
+            <Link href="/onboarding">
+              <Button
+                size="sm"
+                className={`bg-foreground hover:bg-foreground/90 text-background rounded-full transition-all duration-500 ${isScrolled ? "px-4 h-8 text-xs" : "px-6"}`}
+              >
+                Start Your Project
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -142,12 +145,13 @@ export function Navigation() {
             >
               Sign in
             </Button>
-            <Button
-              className="flex-1 bg-foreground text-background rounded-full h-14 text-base"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Start creating
-            </Button>
+            <Link href="/onboarding" className="flex-1 w-full" onClick={() => setIsMobileMenuOpen(false)}>
+              <Button
+                className="w-full bg-foreground text-background rounded-full h-14 text-base"
+              >
+                Start Your Project
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
