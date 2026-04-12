@@ -6,11 +6,80 @@ import { ArrowRight } from "lucide-react";
 import { AnimatedSphere } from "./animated-sphere";
 import Link from "next/link";
 
-export function HeroSection() {
+// ─── Types ───────────────────────────────────────────────────────────────────
+
+export interface HeroCta {
+  label: string;
+  href: string;
+  /** If true, opens in a new browser tab */
+  external?: boolean;
+}
+
+export interface HeroSectionProps {
+  /** Small label above the headline e.g. "Floxia Studio" */
+  eyebrow?: string;
+  /** First line of the big headline */
+  headingLine1?: string;
+  /** Second line — the highlighted/underlined part */
+  headingLine2?: string;
+  /** Paragraph(s) below the headline — accepts a string or JSX */
+  description?: React.ReactNode;
+  /** Primary (filled) button */
+  primaryCta?: HeroCta;
+  /** Secondary (outline) button — omit to hide */
+  secondaryCta?: HeroCta;
+}
+
+// ─── Defaults (homepage content) ─────────────────────────────────────────────
+
+const defaults: Required<HeroSectionProps> = {
+  eyebrow: "Floxia Studio",
+  headingLine1: "Floxia Studio Builds",
+  headingLine2: "What Businesses Need",
+  description:
+    "We are Floxia Studio — a full-service web design and development agency based in the USA, crafting high-performance websites, e-commerce stores, and AI-integrated digital systems for ambitious brands worldwide.",
+  primaryCta: { label: "Start Your Project", href: "/onboarding" },
+  secondaryCta: { label: "See Our Work", href: "#work" },
+};
+
+// ─── Component ────────────────────────────────────────────────────────────────
+
+export function HeroSection({
+  eyebrow = defaults.eyebrow,
+  headingLine1 = defaults.headingLine1,
+  headingLine2 = defaults.headingLine2,
+  description = defaults.description,
+  primaryCta = defaults.primaryCta,
+  secondaryCta = defaults.secondaryCta,
+}: HeroSectionProps) {
   const [isVisible, setIsVisible] = useState(false);
+
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  // Helper: renders a CTA as a link (internal or external)
+  const CtaLink = ({
+    cta,
+    children,
+  }: {
+    cta: HeroCta;
+    children: React.ReactNode;
+  }) =>
+    cta.external ? (
+      <a
+        href={cta.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-full sm:w-auto"
+      >
+        {children}
+      </a>
+    ) : (
+      <Link href={cta.href} className="w-full sm:w-auto">
+        {children}
+      </Link>
+    );
 
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
@@ -25,22 +94,14 @@ export function HeroSection() {
           <div
             key={`h-${i}`}
             className="absolute h-px bg-foreground/10"
-            style={{
-              top: `${12.5 * (i + 1)}%`,
-              left: 0,
-              right: 0,
-            }}
+            style={{ top: `${12.5 * (i + 1)}%`, left: 0, right: 0 }}
           />
         ))}
         {[...Array(12)].map((_, i) => (
           <div
             key={`v-${i}`}
             className="absolute w-px bg-foreground/10"
-            style={{
-              left: `${8.33 * (i + 1)}%`,
-              top: 0,
-              bottom: 0,
-            }}
+            style={{ left: `${8.33 * (i + 1)}%`, top: 0, bottom: 0 }}
           />
         ))}
       </div>
@@ -54,7 +115,7 @@ export function HeroSection() {
         >
           <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground">
             <span className="w-8 h-px bg-foreground/30" />
-            Floxia Studio
+            {eyebrow}
           </span>
         </div>
 
@@ -67,31 +128,27 @@ export function HeroSection() {
                 : "opacity-0 translate-y-8"
             }`}
           >
-            <span className="block">Floxia Studio Builds</span>
+            <span className="block">{headingLine1}</span>
             <span className="block mt-2 sm:mt-0">
-              What Businesses{" "}
               <span className="relative inline-block whitespace-nowrap">
-                Need
+                {headingLine2}
                 <span className="absolute -bottom-1 sm:-bottom-2 left-0 right-0 h-2 sm:h-3 bg-foreground/10" />
               </span>
             </span>
           </h1>
         </div>
 
-        {/* Description */}
+        {/* Description + CTAs */}
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-24 lg:items-end">
-          <p
-            className={`text-md sm:text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-xl transition-all duration-700 delay-200 ${
+          <div
+            className={`text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl transition-all duration-700 delay-200 space-y-4 ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-4"
             }`}
           >
-            We are Floxia Studio — a full-service web design and development
-            agency based in the USA, crafting high-performance websites,
-            e-commerce stores, and AI-integrated digital systems for ambitious
-            brands worldwide.
-          </p>
+            {description}
+          </div>
 
           {/* CTAs */}
           <div
@@ -101,71 +158,33 @@ export function HeroSection() {
                 : "opacity-0 translate-y-4"
             }`}
           >
-            <Link href="/onboarding" className="w-full sm:w-auto">
+            {/* Primary CTA */}
+            <CtaLink cta={primaryCta}>
               <Button
                 size="lg"
                 className="bg-foreground hover:bg-foreground/90 text-background px-6 sm:px-8 h-12 sm:h-14 text-sm sm:text-base rounded-full group w-full"
               >
-                Start Your Project
+                {primaryCta.label}
                 <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
               </Button>
-            </Link>
-            <Button
-              size="lg"
-              variant="outline"
-              className="px-6 sm:px-8 h-12 sm:h-14 text-sm sm:text-base rounded-full border-foreground/20 hover:bg-foreground/5 group w-full sm:w-auto"
-            >
-              See Our Work
-              <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-            </Button>
+            </CtaLink>
+
+            {/* Secondary CTA — only rendered when provided */}
+            {secondaryCta && (
+              <CtaLink cta={secondaryCta}>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="px-6 sm:px-8 h-12 sm:h-14 text-sm sm:text-base rounded-full border-foreground/20 hover:bg-foreground/5 group w-full sm:w-auto"
+                >
+                  {secondaryCta.label}
+                  <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </CtaLink>
+            )}
           </div>
         </div>
       </div>
-
-      {/* Stats marquee - full width outside container */}
-      {/* <div
-        className={`absolute bottom-24  left-0 right-0 transition-all duration-700 delay-500 ${
-          isVisible ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        <div className="flex gap-16 marquee whitespace-nowrap">
-          {[...Array(2)].map((_, i) => (
-            <div key={i} className="flex gap-16">
-              {[
-                {
-                  value: "20 days",
-                  label: "saved on builds",
-                  company: "NETFLIX",
-                },
-                { value: "98%", label: "faster deployment", company: "STRIPE" },
-                {
-                  value: "300%",
-                  label: "throughput increase",
-                  company: "LINEAR",
-                },
-                { value: "6x", label: "faster to ship", company: "NOTION" },
-              ].map((stat) => (
-                <div
-                  key={`${stat.company}-${i}`}
-                  className="flex items-baseline gap-4"
-                >
-                  <span className="text-4xl lg:text-5xl font-display">
-                    {stat.value}
-                  </span>
-                  <span className="text-sm text-muted-foreground">
-                    {stat.label}
-                    <span className="block font-mono text-xs mt-1">
-                      {stat.company}
-                    </span>
-                  </span>
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div> */}
-
-      {/* Scroll indicator */}
     </section>
   );
 }

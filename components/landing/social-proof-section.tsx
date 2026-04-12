@@ -2,7 +2,6 @@
 
 import { useEffect, useState, useRef } from "react";
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export function SocialProofSection() {
@@ -40,7 +39,12 @@ export function SocialProofSection() {
             </div>
             
             <div className="flex flex-col gap-6 lg:items-end w-full">
-              <Link href="/onboarding" className="w-full sm:w-auto">
+              <a
+                href="https://calendly.com/aithinkagents/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto"
+              >
                 <Button className="w-full sm:w-auto h-16 px-10 rounded-full bg-background text-foreground hover:bg-background/90 text-lg font-medium tracking-wide group transition-all shrink-0">
                   Get a Free Consultation Today
                   <span className="ml-2 px-2 py-1 bg-foreground/10 text-foreground text-xs rounded-full group-hover:bg-foreground/20 transition-colors">
@@ -48,7 +52,7 @@ export function SocialProofSection() {
                   </span>
                   <ArrowRight className="w-5 h-5 ml-4 transition-transform group-hover:translate-x-1" />
                 </Button>
-              </Link>
+              </a>
             </div>
           </div>
           

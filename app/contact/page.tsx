@@ -29,7 +29,31 @@ export default function Home() {
   return (
     <main className="relative min-h-screen overflow-x-hidden noise-overlay">
       <Navigation />
-      <HeroSection />
+      <HeroSection
+        eyebrow="Contact Us"
+        headingLine1="Let's Build Something Great —"
+        headingLine2="Start the Conversation"
+        description={
+          <>
+            <p>
+              You have a vision for your digital presence. We have the expertise to build it.
+              Whether you need a custom-coded web application, a high-converting Shopify store,
+              a powerful WordPress website, an AI chatbot integration, or a comprehensive digital
+              platform — Floxia Studio is ready to deliver it.
+            </p>
+            <p>
+              Reach out today for a free, no-obligation consultation with our team. We respond
+              to every inquiry within 24 hours.
+            </p>
+          </>
+        }
+        primaryCta={{
+          label: "Book a Free Consultation",
+          href: "https://calendly.com/aithinkagents/30min",
+          external: true,
+        }}
+        secondaryCta={{ label: "View Our Work", href: "/#work" }}
+      />
       <FeaturesSection />
       <HowItWorksSection />
       <InfrastructureSection />
