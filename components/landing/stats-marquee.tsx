@@ -10,14 +10,14 @@ export function StatsMarquee() {
   }, []);
 
   return (
-    <section className="py-12 border-b border-foreground/10 overflow-hidden w-full relative">
+    <section className="py-6 sm:py-8 lg:py-10 border-b border-foreground/10 overflow-hidden w-full relative">
       {/* Stats marquee */}
       <div
-        className={`w-full transition-all duration-700 delay-300 ${
+        className={`w-full transition-all duration-200 delay-100 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         }`}
       >
-        <div className="flex gap-16 marquee whitespace-nowrap">
+        <div className="flex gap-8 sm:gap-12 lg:gap-16 marquee whitespace-nowrap">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex gap-16">
               {[
@@ -54,14 +54,14 @@ export function StatsMarquee() {
               ].map((stat) => (
                 <div
                   key={`${stat.company}-${stat.value}-${i}`}
-                  className="flex items-baseline gap-4"
+                  className="flex items-baseline gap-2 sm:gap-3 lg:gap-4"
                 >
-                  <span className="text-4xl lg:text-5xl font-display">
+                  <span className="text-2xl sm:text-3xl lg:text-5xl font-display">
                     {stat.value}
                   </span>
-                  <span className="text-sm text-muted-foreground">
+                  <span className="text-xs sm:text-sm text-muted-foreground">
                     {stat.label}
-                    <span className="block font-mono text-xs mt-1">
+                    <span className="block font-mono text-[10px] sm:text-xs mt-0.5 sm:mt-1">
                       {stat.company}
                     </span>
                   </span>

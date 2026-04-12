@@ -34,25 +34,25 @@ export function IntegrationsSection() {
   }, []);
 
   return (
-    <section id="integrations" ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+    <section id="integrations" ref={sectionRef} className="relative py-16 sm:py-20 lg:py-28 overflow-hidden">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
         {/* Header */}
         <div
-          className={`text-center max-w-3xl mx-auto mb-16 lg:mb-24 transition-all duration-700 ${
+          className={`text-center max-w-3xl mx-auto mb-10 sm:mb-14 lg:mb-20 transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
-            <span className="w-8 h-px bg-foreground/30" />
+          <span className="inline-flex items-center gap-2 sm:gap-3 text-xs sm:text-sm font-mono text-muted-foreground mb-4 sm:mb-6">
+            <span className="w-5 sm:w-8 h-px bg-foreground/30" />
             Integrations
-            <span className="w-8 h-px bg-foreground/30" />
+            <span className="w-5 sm:w-8 h-px bg-foreground/30" />
           </span>
-          <h2 className="text-4xl lg:text-6xl font-display tracking-tight mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-display tracking-tight mb-3 sm:mb-5">
             Works with everything
             <br />
             you already use.
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-base sm:text-lg lg:text-xl text-muted-foreground">
             200+ pre-built integrations. Connect your entire stack in minutes.
           </p>
         </div>
@@ -60,19 +60,19 @@ export function IntegrationsSection() {
       </div>
       
       {/* Full-width marquees outside container */}
-      <div className="w-full mb-6">
-        <div className="flex gap-6 marquee">
+      <div className="w-full mb-3 sm:mb-5 lg:mb-6">
+        <div className="flex gap-3 sm:gap-4 lg:gap-6 marquee">
           {[...Array(2)].map((_, setIndex) => (
-            <div key={setIndex} className="flex gap-6 shrink-0">
+            <div key={setIndex} className="flex gap-3 sm:gap-4 lg:gap-6 shrink-0">
               {integrations.map((integration) => (
                 <div
                   key={`${integration.name}-${setIndex}`}
-                  className="shrink-0 px-8 py-6 border border-foreground/10 hover:border-foreground/30 hover:bg-foreground/[0.02] transition-all duration-300 group"
+                  className="shrink-0 px-4 sm:px-6 lg:px-8 py-4 sm:py-5 lg:py-6 border border-foreground/10 hover:border-foreground/30 hover:bg-foreground/[0.02] transition-all duration-300 group"
                 >
-                  <div className="text-lg font-medium group-hover:translate-x-1 transition-transform">
+                  <div className="text-sm sm:text-base lg:text-lg font-medium group-hover:translate-x-1 transition-transform">
                     {integration.name}
                   </div>
-                  <div className="text-sm text-muted-foreground">{integration.category}</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">{integration.category}</div>
                 </div>
               ))}
             </div>
@@ -82,18 +82,18 @@ export function IntegrationsSection() {
       
       {/* Reverse marquee */}
       <div className="w-full">
-        <div className="flex gap-6 marquee-reverse">
+        <div className="flex gap-3 sm:gap-4 lg:gap-6 marquee-reverse">
           {[...Array(2)].map((_, setIndex) => (
-            <div key={setIndex} className="flex gap-6 shrink-0">
+            <div key={setIndex} className="flex gap-3 sm:gap-4 lg:gap-6 shrink-0">
               {[...integrations].reverse().map((integration) => (
                 <div
                   key={`${integration.name}-reverse-${setIndex}`}
-                  className="shrink-0 px-8 py-6 border border-foreground/10 hover:border-foreground/30 hover:bg-foreground/[0.02] transition-all duration-300 group"
+                  className="shrink-0 px-4 sm:px-6 lg:px-8 py-4 sm:py-5 lg:py-6 border border-foreground/10 hover:border-foreground/30 hover:bg-foreground/[0.02] transition-all duration-300 group"
                 >
-                  <div className="text-lg font-medium group-hover:translate-x-1 transition-transform">
+                  <div className="text-sm sm:text-base lg:text-lg font-medium group-hover:translate-x-1 transition-transform">
                     {integration.name}
                   </div>
-                  <div className="text-sm text-muted-foreground">{integration.category}</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">{integration.category}</div>
                 </div>
               ))}
             </div>

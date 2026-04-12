@@ -108,7 +108,6 @@ export function HeroSection({
 
       {/* Content */}
       <div className="relative z-10 max-w-[1400px] mx-auto w-full px-4 sm:px-6 lg:px-12 pt-28 pb-16 sm:pt-32 sm:pb-20 lg:py-40">
-
         {/* Eyebrow */}
         <div
           className={`mb-5 sm:mb-8 transition-all duration-700 ${
@@ -125,7 +124,9 @@ export function HeroSection({
         <div className="mb-6 sm:mb-10 lg:mb-12">
           <h1
             className={`font-display leading-[1.1] tracking-tight transition-all duration-1000 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
             }`}
             style={{ fontSize: "clamp(1.75rem, 5.5vw, 6.5rem)" }}
           >
@@ -144,11 +145,12 @@ export function HeroSection({
 
         {/* Description + CTAs — stacked on mobile, side-by-side on lg */}
         <div className="flex flex-col gap-6 sm:gap-8 lg:grid lg:grid-cols-2 lg:gap-20 lg:items-end">
-
           {/* Description */}
           <div
             className={`text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed max-w-xl transition-all duration-700 delay-200 space-y-3 sm:space-y-4 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-4"
             }`}
           >
             {description}
@@ -157,7 +159,9 @@ export function HeroSection({
           {/* CTA Buttons */}
           <div
             className={`flex flex-col xs:flex-row sm:flex-row items-stretch xs:items-center sm:items-center gap-3 transition-all duration-700 delay-300 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-4"
             }`}
           >
             {/* Primary */}
@@ -185,7 +189,6 @@ export function HeroSection({
               </CtaLink>
             )}
           </div>
-
         </div>
       </div>
     </section>
