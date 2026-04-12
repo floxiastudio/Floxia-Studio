@@ -1,32 +1,32 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import { Shield, Lock, Eye, FileCheck } from "lucide-react";
+import { Shield, Zap, SearchCheck, HeartHandshake } from "lucide-react";
 
 const securityFeatures = [
   {
     icon: Shield,
-    title: "SOC 2 Type II",
-    description: "Independently audited security controls with continuous monitoring.",
+    title: "SSL & Security Hardened",
+    description: "Every site ships with SSL, Cloudflare CDN, DDoS protection, and security headers configured from day one.",
   },
   {
-    icon: Lock,
-    title: "End-to-end encryption",
-    description: "AES-256 encryption for data at rest and TLS 1.3 in transit.",
+    icon: Zap,
+    title: "95+ PageSpeed Guaranteed",
+    description: "We optimize every build for Core Web Vitals — fast load times, next-gen images, and lean, minified code.",
   },
   {
-    icon: Eye,
-    title: "Zero-trust architecture",
-    description: "Every request is authenticated and authorized. No exceptions.",
+    icon: SearchCheck,
+    title: "SEO-Optimized From Day One",
+    description: "Proper heading hierarchy, schema markup, sitemap, canonical tags, and meta data — built in, not bolted on.",
   },
   {
-    icon: FileCheck,
-    title: "GDPR & HIPAA",
-    description: "Full compliance with data protection and healthcare regulations.",
+    icon: HeartHandshake,
+    title: "Transparent & On Time",
+    description: "Fixed-price proposals, milestone-based delivery, and a dedicated project manager from kickoff to launch.",
   },
 ];
 
-const certifications = ["SOC 2", "ISO 27001", "HIPAA", "GDPR", "CCPA"];
+const certifications = ["Fast Delivery", "Clean Code", "SEO Ready", "Mobile First", "30-Day Support"];
 
 export function SecuritySection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -56,16 +56,17 @@ export function SecuritySection() {
           >
             <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
               <span className="w-8 h-px bg-foreground/30" />
-              Security
+              Why Floxia Studio
             </span>
             <h2 className="text-4xl lg:text-6xl font-display tracking-tight mb-8">
-              Trust is
+              Quality is
               <br />
               non-negotiable.
             </h2>
             <p className="text-xl text-muted-foreground leading-relaxed mb-12">
-              Enterprise-grade security isn&apos;t optional. It&apos;s built into every layer 
-              of our platform, from infrastructure to application.
+              We don&apos;t cut corners — on design, code, or communication. Every
+              website we deliver is fast, secure, SEO-ready, and built to grow
+              with your business from day one.
             </p>
 
             {/* Certifications */}

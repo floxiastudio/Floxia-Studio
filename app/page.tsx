@@ -9,7 +9,7 @@ import { SecuritySection } from "@/components/landing/security-section";
 import { DevelopersSection } from "@/components/landing/developers-section";
 import { TestimonialsSection } from "@/components/landing/testimonials-section";
 import { PricingSection } from "@/components/landing/pricing-section";
-import { CtaSection } from "@/components/landing/cta-section";
+// import { CtaSection } from "@/components/landing/cta-section";
 import { FooterSection } from "@/components/landing/footer-section";
 import { StatsMarquee } from "@/components/landing/stats-marquee";
 import { WhoWeAreSection } from "@/components/landing/who-we-are-section";
@@ -21,14 +21,22 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Floxia Studio | Custom Web Design & Development Agency USA",
-  description: "Floxia Studio builds high-performance websites using Next.js, React, Angular, WordPress & Shopify. AI integrations, chatbots, dashboards & SEO-ready design. Fast. Secure. Built for results.",
-  keywords: ["web design agency USA", "custom website development", "Next.js agency", "Shopify agency", "AI web development"],
+  description:
+    "Floxia Studio builds high-performance websites using Next.js, React, Angular, WordPress & Shopify. AI integrations, chatbots, dashboards & SEO-ready design. Fast. Secure. Built for results.",
+  keywords: [
+    "web design agency USA",
+    "custom website development",
+    "Next.js agency",
+    "Shopify agency",
+    "AI web development",
+  ],
   alternates: {
     canonical: "https://floxiastudio.com/",
   },
   openGraph: {
     title: "Floxia Studio — We Build Websites That Work Harder",
-    description: "From custom-coded Next.js apps to Shopify stores and WordPress sites — Floxia Studio delivers fast, secure, AI-powered websites tailored to your business goals.",
+    description:
+      "From custom-coded Next.js apps to Shopify stores and WordPress sites — Floxia Studio delivers fast, secure, AI-powered websites tailored to your business goals.",
     url: "https://floxiastudio.com/",
     type: "website",
   },
@@ -42,22 +50,22 @@ export default function Home() {
       <StatsMarquee />
       <WhoWeAreSection />
       <WhatWeDoSection />
-      
+
       <FeaturesSection />
       <HowItWorksSection />
       <InfrastructureSection />
       <MetricsSection />
-      
+
       <TechStackSection />
       <WhyChooseUsSection />
-      
+
       <IntegrationsSection />
       <SecuritySection />
       <DevelopersSection />
       <TestimonialsSection />
       <PricingSection />
-      
-      <CtaSection />
+
+      {/* <CtaSection /> */}
       <SocialProofSection />
       <FooterSection />
     </main>

@@ -45,29 +45,29 @@ function AnimatedCounter({ end, suffix = "", prefix = "" }: { end: number; suffi
 }
 
 const metrics = [
-  { 
-    value: 2847392, 
-    suffix: "", 
+  {
+    value: 50,
+    suffix: "+",
     prefix: "",
-    label: "API requests today",
+    label: "Websites launched",
   },
-  { 
-    value: 99, 
-    suffix: ".99%", 
+  {
+    value: 99,
+    suffix: "%",
     prefix: "",
-    label: "Uptime this quarter",
+    label: "Client satisfaction rate",
   },
-  { 
-    value: 23, 
-    suffix: "ms", 
+  {
+    value: 95,
+    suffix: "+",
     prefix: "",
-    label: "Average response time",
+    label: "Avg. PageSpeed score on every build",
   },
-  { 
-    value: 184, 
-    suffix: "", 
+  {
+    value: 3,
+    suffix: "x",
     prefix: "",
-    label: "Countries served",
+    label: "Faster delivery than industry average",
   },
 ];
 
@@ -101,22 +101,22 @@ export function MetricsSection() {
           <div>
             <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
               <span className="w-8 h-px bg-foreground/30" />
-              Live metrics
+              By the numbers
             </span>
             <h2
               className={`text-4xl lg:text-6xl font-display tracking-tight transition-all duration-700 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              Performance you
+              Results you
               <br />
-              can measure.
+              can see.
             </h2>
           </div>
           <div className="flex items-center gap-4 font-mono text-sm text-muted-foreground">
             <span className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              Live
+              Always Delivering
             </span>
             <span className="text-foreground/30">|</span>
             <span>{time.toLocaleTimeString()}</span>

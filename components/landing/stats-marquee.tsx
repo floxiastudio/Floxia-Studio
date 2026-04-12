@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 export function StatsMarquee() {
   const [isVisible, setIsVisible] = useState(false);
-  const [wordIndex, setWordIndex] = useState(0);
 
   useEffect(() => {
     setIsVisible(true);
@@ -23,20 +22,38 @@ export function StatsMarquee() {
             <div key={i} className="flex gap-16">
               {[
                 {
-                  value: "20 days",
-                  label: "saved on builds",
-                  company: "NETFLIX",
+                  value: "3x",
+                  label: "faster website delivery",
+                  company: "FLOXIA STUDIO",
                 },
-                { value: "98%", label: "faster deployment", company: "STRIPE" },
+                {
+                  value: "99%",
+                  label: "client satisfaction rate",
+                  company: "OUR CLIENTS",
+                },
+                {
+                  value: "95+",
+                  label: "PageSpeed score, every build",
+                  company: "GOOGLE LIGHTHOUSE",
+                },
                 {
                   value: "300%",
-                  label: "throughput increase",
-                  company: "LINEAR",
+                  label: "avg. organic traffic growth",
+                  company: "SEO RESULTS",
                 },
-                { value: "6x", label: "faster to ship", company: "NOTION" },
+                {
+                  value: "50+",
+                  label: "websites launched",
+                  company: "FLOXIA STUDIO",
+                },
+                {
+                  value: "24hr",
+                  label: "guaranteed response time",
+                  company: "OUR PROMISE",
+                },
               ].map((stat) => (
                 <div
-                  key={`${stat.company}-${i}`}
+                  key={`${stat.company}-${stat.value}-${i}`}
                   className="flex items-baseline gap-4"
                 >
                   <span className="text-4xl lg:text-5xl font-display">
@@ -54,8 +71,6 @@ export function StatsMarquee() {
           ))}
         </div>
       </div>
-
-      {/* Scroll indicator */}
     </section>
   );
 }

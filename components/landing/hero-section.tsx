@@ -6,21 +6,10 @@ import { ArrowRight } from "lucide-react";
 import { AnimatedSphere } from "./animated-sphere";
 import Link from "next/link";
 
-const words = ["Actually Need", "Truly Want", "Deserve", "Demand"];
-
 export function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
-  const [wordIndex, setWordIndex] = useState(0);
-
   useEffect(() => {
     setIsVisible(true);
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setWordIndex((prev) => (prev + 1) % words.length);
-    }, 2500);
-    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -78,23 +67,11 @@ export function HeroSection() {
                 : "opacity-0 translate-y-8"
             }`}
           >
-            <span className="block">We Build</span>
+            <span className="block">Floxia Studio Builds</span>
             <span className="block mt-2 sm:mt-0">
               What Businesses{" "}
               <span className="relative inline-block whitespace-nowrap">
-                <span key={wordIndex} className="inline-flex">
-                  {words[wordIndex].split("").map((char, i) => (
-                    <span
-                      key={`${wordIndex}-${i}`}
-                      className="inline-block animate-char-in"
-                      style={{
-                        animationDelay: `${i * 30}ms`,
-                      }}
-                    >
-                      {char === " " ? "\u00A0" : char}
-                    </span>
-                  ))}
-                </span>
+                Need
                 <span className="absolute -bottom-1 sm:-bottom-2 left-0 right-0 h-2 sm:h-3 bg-foreground/10" />
               </span>
             </span>
