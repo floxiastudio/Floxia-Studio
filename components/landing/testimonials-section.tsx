@@ -51,10 +51,10 @@ export function TestimonialsSection() {
   const activeTestimonial = testimonials[activeIndex];
 
   return (
-    <section className="relative py-32 lg:py-40 border-t border-foreground/10 lg:pb-14">
+    <section className="relative py-16 lg:py-24 border-t border-foreground/10 lg:pb-14">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Label */}
-        <div className="flex items-center gap-4 mb-16">
+        <div className="flex items-center gap-4 mb-10">
           <span className="font-mono text-xs tracking-widest text-muted-foreground uppercase">
             What people say
           </span>
@@ -79,7 +79,7 @@ export function TestimonialsSection() {
 
             {/* Author */}
             <div
-              className={`mt-12 flex items-center gap-6 transition-all duration-300 delay-100 ${
+              className={`mt-8 flex items-center gap-6 transition-all duration-300 delay-100 ${
                 isAnimating ? "opacity-0" : "opacity-100"
               }`}
             >
@@ -136,7 +136,7 @@ export function TestimonialsSection() {
         </div>
 
         {/* Company Logos Marquee Label */}
-        <div className="mt-24 pt-12 border-t border-foreground/10">
+        <div className="mt-16 pt-8 border-t border-foreground/10">
           <p className="font-mono text-xs tracking-widest text-muted-foreground uppercase mb-8 text-center">
             Trusted by forward-thinking teams
           </p>

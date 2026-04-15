@@ -8,7 +8,7 @@ const steps = [
     title: "Discovery & Strategy",
     description: "We start by understanding your business, goals, and audience. Then we map out the platform, tech stack, page structure, and SEO strategy before a single line of code is written.",
     filename: "strategy.ts",
-    code: `// Floxia Studio — Discovery Phase
+    code: `// Floxia Studio - Discovery Phase
 
 project.define({
   business: 'your-brand',
@@ -22,7 +22,7 @@ project.define({
     title: "Design & Development",
     description: "Our designers craft a brand-aligned UI while our developers build clean, scalable, fully custom code. You review at every milestone — no surprises, no guesswork.",
     filename: "build.ts",
-    code: `// Floxia Studio — Build Phase
+    code: `// Floxia Studio - Build Phase
 
 site.build({
   design: 'custom-branded',
@@ -39,7 +39,7 @@ site.build({
     title: "Launch & Grow",
     description: "We launch your site with full security hardening, speed optimization, and a 95+ PageSpeed score. Then we hand over the keys — with 30 days of post-launch support included.",
     filename: "launch.ts",
-    code: `// Floxia Studio — Launch Phase
+    code: `// Floxia Studio - Launch Phase
 
 site.deploy({
   ssl: true,
@@ -78,9 +78,8 @@ export function HowItWorksSection() {
 
   return (
     <section
-      id="how-it-works"
       ref={sectionRef}
-      className="relative py-24 lg:py-32 bg-foreground text-background overflow-hidden"
+      className="relative py-16 lg:py-24 bg-foreground text-background overflow-hidden"
     >
       {/* Diagonal lines pattern */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
@@ -97,8 +96,8 @@ export function HowItWorksSection() {
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Header */}
-        <div className="mb-16 lg:mb-24">
-          <span className="inline-flex items-center gap-3 text-sm font-mono text-background/50 mb-6">
+        <div className="mb-10 lg:mb-16">
+          <span className="inline-flex items-center gap-3 text-sm font-mono text-background/50 mb-4">
             <span className="w-8 h-px bg-background/30" />
             Our Process
           </span>
@@ -122,7 +121,7 @@ export function HowItWorksSection() {
                 key={step.number}
                 type="button"
                 onClick={() => setActiveStep(index)}
-                className={`w-full text-left py-8 border-b border-background/10 transition-all duration-500 group ${
+                className={`w-full text-left py-6 border-b border-background/10 transition-all duration-500 group ${
                   activeStep === index ? "opacity-100" : "opacity-40 hover:opacity-70"
                 }`}
               >

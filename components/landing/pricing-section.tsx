@@ -97,7 +97,7 @@ const addons = [
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="relative py-24 lg:py-36 border-t border-foreground/10 overflow-hidden">
+    <section id="pricing" className="relative py-16 lg:py-24 border-t border-foreground/10 overflow-hidden">
       {/* Subtle background grid */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.025]"
@@ -110,12 +110,12 @@ export function PricingSection() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* ── Header ── */}
-        <div className="max-w-3xl mb-16 lg:mb-24">
-          <span className="inline-flex items-center gap-2 font-mono text-xs tracking-widest text-muted-foreground uppercase mb-6">
+        <div className="max-w-3xl mb-10 lg:mb-16">
+          <span className="inline-flex items-center gap-2 font-mono text-xs tracking-widest text-muted-foreground uppercase mb-4">
             <span className="w-6 h-px bg-foreground/30 inline-block" />
             Pricing
           </span>
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight text-foreground mb-5 leading-tight">
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight text-foreground mb-4 leading-tight">
             Invest in your
             <br />
             <span className="text-stroke">digital presence</span>
@@ -126,7 +126,7 @@ export function PricingSection() {
         </div>
 
         {/* ── Pricing Cards ── */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 mb-4">
           {plans.map((plan) => {
             const Icon = plan.icon;
             return (

@@ -10,14 +10,14 @@ export function StatsMarquee() {
   }, []);
 
   return (
-    <section className="py-6 sm:py-8 lg:py-10 border-b border-foreground/10 overflow-hidden w-full relative">
+    <section className="py-4 sm:py-6 lg:py-8 border-b border-foreground/10 overflow-hidden w-full relative">
       {/* Stats marquee */}
       <div
         className={`w-full transition-all duration-200 delay-100 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         }`}
       >
-        <div className="flex gap-8 sm:gap-12 lg:gap-16 marquee whitespace-nowrap">
+        <div className="flex gap-6 sm:gap-8 lg:gap-12 marquee whitespace-nowrap">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex gap-16">
               {[

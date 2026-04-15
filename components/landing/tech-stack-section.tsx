@@ -45,18 +45,18 @@ export function TechStackSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 lg:py-32 bg-foreground text-background">
+    <section ref={sectionRef} className="py-16 lg:py-24 bg-foreground text-background">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         
-        <div className={`grid lg:grid-cols-[1fr,2fr] gap-12 lg:gap-24 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+        <div className={`grid lg:grid-cols-[1fr,2fr] gap-10 lg:gap-16 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           
           {/* Header */}
           <div>
-            <div className="flex items-center gap-3 text-sm font-mono text-muted mb-6">
+            <div className="flex items-center gap-3 text-sm font-mono text-muted mb-4">
               <span className="w-8 h-px bg-background/30" />
               Technology Stack
             </div>
-            <h2 className="text-4xl md:text-5xl font-display leading-[1.1] tracking-tight mb-6">
+            <h2 className="text-4xl md:text-5xl font-display leading-[1.1] tracking-tight mb-4">
               Masters of the Full <br/> Web Technology Stack
             </h2>
             <p className="text-muted leading-relaxed text-lg">
@@ -65,7 +65,7 @@ export function TechStackSection() {
           </div>
 
           {/* Grid */}
-          <div className="grid sm:grid-cols-2 gap-8 md:gap-x-12 md:gap-y-10">
+          <div className="grid sm:grid-cols-2 gap-6 md:gap-x-10 md:gap-y-8">
             {STACK.map((group, i) => (
               <div 
                 key={i} 

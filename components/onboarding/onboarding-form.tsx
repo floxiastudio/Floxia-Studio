@@ -551,11 +551,11 @@ export function OnboardingForm() {
           <CheckCircle2 className="w-8 h-8 text-green-500" />
         </div>
         <h2 className="text-3xl font-display font-bold mb-3">Thanks, {name.split(" ")[0]}!</h2>
-        <p className="text-muted-foreground leading-relaxed max-w-md mx-auto mb-8">
+        <p className="text-muted-foreground leading-relaxed max-w-md mx-auto mb-6">
           We've received your questionnaire for <strong className="text-foreground">{biz}</strong>. Our team will review everything and reach out within 24 hours to schedule your free discovery call.
         </p>
 
-        <div className="bg-muted/30 rounded-xl p-6 text-left max-w-lg mx-auto mb-8 border border-border/50">
+        <div className="bg-muted/30 rounded-xl p-5 text-left max-w-lg mx-auto mb-6 border border-border/50">
           {[
             { k: "Business", v: biz },
             { k: "Email", v: formState["f_email"] },
@@ -595,7 +595,7 @@ export function OnboardingForm() {
 
       <div className="rounded-3xl border border-border/80 bg-background/95 backdrop-blur-xl shadow-2xl overflow-hidden min-h-[500px] flex flex-col">
         {/* Header */}
-        <div className="p-6 md:p-12 border-b border-border/50 bg-foreground/[0.02]">
+        <div className="p-5 md:p-8 border-b border-border/50 bg-foreground/[0.02]">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 rounded-xl bg-foreground flex items-center justify-center">
               <span className="text-background font-bold text-lg">F</span>
@@ -605,7 +605,7 @@ export function OnboardingForm() {
               <div className="text-xs text-muted-foreground">Client onboarding</div>
             </div>
           </div>
-          <h1 className="text-2xl md:text-3xl font-display font-bold mb-2">New project questionnaire</h1>
+          <h1 className="text-2xl md:text-3xl font-display font-bold mb-1">New project questionnaire</h1>
           <p className="text-sm md:text-base text-muted-foreground max-w-2xl">
             Help us understand your business so we can build something extraordinary. Takes about 8–10 minutes. Fields marked <span className="text-destructive">*</span> are required.
           </p>
@@ -636,13 +636,13 @@ export function OnboardingForm() {
         </nav>
 
         {/* Form Body */}
-        <div className="p-6 md:p-12 flex-1" ref={formBodyRef}>
+        <div className="p-5 md:p-8 flex-1" ref={formBodyRef}>
           <div className="animate-in fade-in slide-in-from-right-4 duration-700" key={currentStep}>
             <div className="text-[10px] font-bold tracking-[0.12em] uppercase text-muted-foreground mb-1">
               Section {currentStep + 1} of {STEPS.length}
             </div>
             <h2 className="text-xl md:text-2xl font-bold mb-1">{currentStepData.heading}</h2>
-            <p className="text-sm text-muted-foreground mb-8 pb-8 border-b border-border/50">{currentStepData.sub}</p>
+            <p className="text-sm text-muted-foreground mb-6 pb-6 border-b border-border/50">{currentStepData.sub}</p>
 
             <div className="space-y-2">
               {currentStepData.fields.map((f: any) => renderField(f))}
@@ -651,7 +651,7 @@ export function OnboardingForm() {
         </div>
 
         {/* Footer */}
-        <div className="px-6 md:px-12 py-6 border-t border-border/50 flex items-center justify-between bg-foreground/[0.01]">
+        <div className="px-5 md:px-8 py-5 border-t border-border/50 flex items-center justify-between bg-foreground/[0.01]">
           <span className="text-sm font-medium text-muted-foreground hidden sm:inline-block">
             Section {currentStep + 1} of {STEPS.length}
           </span>

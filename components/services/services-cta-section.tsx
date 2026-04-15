@@ -28,7 +28,7 @@ export function ServicesCtaSection() {
   return (
     <section
       ref={ref}
-      className="py-24 lg:py-36 bg-background border-t border-foreground/10 overflow-hidden relative"
+      className="py-16 lg:py-24 bg-background border-t border-foreground/10 overflow-hidden relative"
     >
       {/* Grid texture */}
       <div
@@ -43,7 +43,7 @@ export function ServicesCtaSection() {
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Stats strip */}
         <div
-          className={`grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12 transition-all duration-1000 ${
+          className={`grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
@@ -65,7 +65,7 @@ export function ServicesCtaSection() {
 
         {/* Main CTA card */}
         <div
-          className={`p-10 sm:p-16 lg:p-24 rounded-3xl bg-foreground text-primary-foreground relative overflow-hidden transition-all duration-1000 ${
+          className={`p-8 sm:p-12 lg:p-16 rounded-3xl bg-foreground text-primary-foreground relative overflow-hidden transition-all duration-1000 ${
             isVisible
               ? "opacity-100 scale-100 translate-y-0"
               : "opacity-0 scale-95 translate-y-12"
@@ -79,11 +79,11 @@ export function ServicesCtaSection() {
           <div className="relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
             {/* Left */}
             <div>
-              <div className="flex items-center gap-3 text-sm font-mono text-primary-foreground/50 mb-6">
+              <div className="flex items-center gap-3 text-sm font-mono text-primary-foreground/50 mb-4">
                 <span className="w-8 h-px bg-primary-foreground/30" />
                 Ready to Get Started?
               </div>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.1] mb-6 tracking-tight">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.1] mb-4 tracking-tight">
                 Let's Build Your Digital Presence
               </h2>
               <p className="text-base sm:text-lg text-primary-foreground/70 leading-relaxed">

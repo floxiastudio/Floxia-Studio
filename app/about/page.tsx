@@ -31,22 +31,24 @@ export default function AboutPage() {
       {/* Hero */}
       <HeroSection
         eyebrow="About Us"
-        headingLine1="We Are Floxia Studio —"
+        headingLine1="We Are Floxia Studio"
         headingLine2="Built by Builders, for Businesses"
         description={
           <>
             <p>
-              Floxia Studio is a premier custom web design and development agency serving clients
-              across the United States and beyond. We were founded with a singular obsession: to
-              close the gap between what businesses need from their websites and what generic
-              agencies typically deliver. Our name — Floxia — represents the fluid flow of ideas
-              from concept to code, from design to deployment.
+              Floxia Studio is a premier custom web design and development
+              agency serving clients across the United States and beyond. We
+              were founded with a singular obsession: to close the gap between
+              what businesses need from their websites and what generic agencies
+              typically deliver. Our name, Floxia, represents the fluid flow of
+              ideas from concept to code, from design to deployment.
             </p>
             <p>
-              We are not a template shop. We are not a one-size-fits-all solution. We are a team
-              of dedicated engineers, creative designers, and digital strategists who believe that
-              every business deserves a website that is as unique, powerful, and ambitious as the
-              brand it represents.
+              We are not a template shop. We are not a one-size-fits-all
+              solution. We are a team of dedicated engineers, creative
+              designers, and digital strategists who believe that every business
+              deserves a website that is as unique, powerful, and ambitious as
+              the brand it represents.
             </p>
           </>
         }

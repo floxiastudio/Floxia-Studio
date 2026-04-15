@@ -7,26 +7,36 @@ const securityFeatures = [
   {
     icon: Shield,
     title: "SSL & Security Hardened",
-    description: "Every site ships with SSL, Cloudflare CDN, DDoS protection, and security headers configured from day one.",
+    description:
+      "Every site ships with SSL, Cloudflare CDN, DDoS protection, and security headers configured from day one.",
   },
   {
     icon: Zap,
     title: "95+ PageSpeed Guaranteed",
-    description: "We optimize every build for Core Web Vitals — fast load times, next-gen images, and lean, minified code.",
+    description:
+      "We optimize every build for Core Web Vitals fast load times, next-gen images, and lean, minified code.",
   },
   {
     icon: SearchCheck,
     title: "SEO-Optimized From Day One",
-    description: "Proper heading hierarchy, schema markup, sitemap, canonical tags, and meta data — built in, not bolted on.",
+    description:
+      "Proper heading hierarchy, schema markup, sitemap, canonical tags, and meta data built in, not bolted on.",
   },
   {
     icon: HeartHandshake,
     title: "Transparent & On Time",
-    description: "Fixed-price proposals, milestone-based delivery, and a dedicated project manager from kickoff to launch.",
+    description:
+      "Fixed-price proposals, milestone-based delivery, and a dedicated project manager from kickoff to launch.",
   },
 ];
 
-const certifications = ["Fast Delivery", "Clean Code", "SEO Ready", "Mobile First", "30-Day Support"];
+const certifications = [
+  "Fast Delivery",
+  "Clean Code",
+  "SEO Ready",
+  "Mobile First",
+  "30-Day Support",
+];
 
 export function SecuritySection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -37,7 +47,7 @@ export function SecuritySection() {
       ([entry]) => {
         if (entry.isIntersecting) setIsVisible(true);
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
@@ -45,26 +55,32 @@ export function SecuritySection() {
   }, []);
 
   return (
-    <section id="security" ref={sectionRef} className="relative py-24 lg:py-32 bg-foreground/[0.02] overflow-hidden">
+    <section
+      id="security"
+      ref={sectionRef}
+      className="relative py-16 lg:py-24 bg-foreground/[0.02] overflow-hidden"
+    >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
           {/* Left: Content */}
           <div
             className={`transition-all duration-700 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
             }`}
           >
-            <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
+            <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-4">
               <span className="w-8 h-px bg-foreground/30" />
               Why Floxia Studio
             </span>
-            <h2 className="text-4xl lg:text-6xl font-display tracking-tight mb-8">
+            <h2 className="text-4xl lg:text-5xl font-display tracking-tight mb-6">
               Quality is
               <br />
               non-negotiable.
             </h2>
-            <p className="text-xl text-muted-foreground leading-relaxed mb-12">
-              We don&apos;t cut corners — on design, code, or communication. Every
+            <p className="text-xl text-muted-foreground leading-relaxed mb-8">
+              We don&apos;t cut corners on design, code, or communication. Every
               website we deliver is fast, secure, SEO-ready, and built to grow
               with your business from day one.
             </p>
@@ -75,7 +91,9 @@ export function SecuritySection() {
                 <span
                   key={cert}
                   className={`px-4 py-2 border border-foreground/10 text-sm font-mono transition-all duration-500 ${
-                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                    isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-4"
                   }`}
                   style={{ transitionDelay: `${index * 50 + 200}ms` }}
                 >
@@ -91,7 +109,9 @@ export function SecuritySection() {
               <div
                 key={feature.title}
                 className={`p-6 border border-foreground/10 hover:border-foreground/20 transition-all duration-500 group ${
-                  isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
+                  isVisible
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 translate-x-8"
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
@@ -103,7 +123,9 @@ export function SecuritySection() {
                     <h3 className="text-lg font-medium mb-1 group-hover:translate-x-1 transition-transform duration-300">
                       {feature.title}
                     </h3>
-                    <p className="text-muted-foreground">{feature.description}</p>
+                    <p className="text-muted-foreground">
+                      {feature.description}
+                    </p>
                   </div>
                 </div>
               </div>

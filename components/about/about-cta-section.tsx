@@ -9,44 +9,50 @@ export function AboutCtaSection() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([e]) => { if (e.isIntersecting) setIsVisible(true); },
-      { threshold: 0.1 }
+      ([e]) => {
+        if (e.isIntersecting) setIsVisible(true);
+      },
+      { threshold: 0.1 },
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section ref={ref} className="py-24 lg:py-36 bg-background border-t border-foreground/10 overflow-hidden relative">
-      <div className="absolute inset-0 pointer-events-none opacity-[0.025]"
+    <section
+      ref={ref}
+      className="py-16 lg:py-24 bg-background border-t border-foreground/10 overflow-hidden relative"
+    >
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.025]"
         style={{
-          backgroundImage: "linear-gradient(currentColor 1px, transparent 1px), linear-gradient(90deg, currentColor 1px, transparent 1px)",
+          backgroundImage:
+            "linear-gradient(currentColor 1px, transparent 1px), linear-gradient(90deg, currentColor 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }}
       />
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div
-          className={`p-10 sm:p-16 lg:p-24 rounded-3xl bg-foreground text-primary-foreground relative overflow-hidden transition-all duration-1000 ${isVisible ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 translate-y-12"}`}
-        >
+          className={`p-8 sm:p-12 lg:p-16 rounded-3xl bg-foreground text-primary-foreground relative overflow-hidden transition-all duration-1000 ${isVisible ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 translate-y-12"}`}
           {/* Decorative blur */}
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-foreground/10 blur-[100px] rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none" />
 
           <div className="relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
             {/* Left */}
             <div>
-              <div className="flex items-center gap-3 text-sm font-mono text-primary-foreground/50 mb-6">
+              <div className="flex items-center gap-3 text-sm font-mono text-primary-foreground/50 mb-4">
                 <span className="w-8 h-px bg-primary-foreground/30" />
                 Ready to Start?
               </div>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.1] mb-6 tracking-tight">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.1] mb-4 tracking-tight">
                 Let's Build Something Together
               </h2>
               <p className="text-base sm:text-lg text-primary-foreground/70 leading-relaxed max-w-xl">
-                Whether you're launching your first business website, scaling an e-commerce operation,
-                or rebuilding a digital platform that no longer serves your growth — Floxia Studio is
-                ready to be your partner. We bring the technical depth, creative vision, and strategic
-                thinking to help your business thrive online.
+                Whether you're launching your first business website, scaling an
+                e-commerce operation, or rebuilding a digital platform that no
+                longer serves your growth Floxia Studio is ready to be your
+                partner. We bring the technical depth, creative vision, and
+                strategic thinking to help your business thrive online.
               </p>
             </div>
 

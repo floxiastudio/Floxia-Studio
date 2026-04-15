@@ -52,14 +52,14 @@ export function Navigation() {
         >
           <div
             className={`flex items-center justify-between transition-all duration-500 px-5 sm:px-6 lg:px-8 ${
-              isScrolled ? "h-14" : "h-16 sm:h-20"
+              isScrolled ? "h-12" : "h-14 sm:h-16"
             }`}
           >
             {/* Logo */}
             <Logo />
 
             {/* Desktop Navigation Links */}
-            <div className="hidden md:flex items-center gap-10 lg:gap-12">
+            <div className="hidden md:flex items-center gap-8 lg:gap-10">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
@@ -121,7 +121,7 @@ export function Navigation() {
         <div className="flex flex-col h-full px-7 pt-24 sm:pt-28 pb-8 safe-area-inset">
 
           {/* Nav Links */}
-          <div className="flex-1 flex flex-col justify-center gap-6 sm:gap-8">
+          <div className="flex-1 flex flex-col justify-center gap-4 sm:gap-6">
             {navLinks.map((link, i) => (
               <Link
                 key={link.name}

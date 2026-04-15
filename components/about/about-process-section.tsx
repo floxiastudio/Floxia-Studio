@@ -62,19 +62,19 @@ export function AboutProcessSection() {
   }, []);
 
   return (
-    <section ref={ref} className="relative py-20 sm:py-24 lg:py-36 bg-background overflow-hidden border-t border-foreground/10">
+    <section ref={ref} className="relative py-12 sm:py-16 lg:py-24 bg-background overflow-hidden border-t border-foreground/10">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-foreground/[0.03] rounded-full blur-[100px] pointer-events-none" />
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
 
         {/* Header */}
-        <div className={`text-center max-w-2xl mx-auto mb-12 sm:mb-16 lg:mb-20 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+        <div className={`text-center max-w-2xl mx-auto mb-8 sm:mb-10 lg:mb-12 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <div className="flex items-center justify-center gap-3 text-xs sm:text-sm font-mono text-muted-foreground mb-5">
             <span className="w-6 sm:w-8 h-px bg-foreground/30" />
             Our Process
             <span className="w-6 sm:w-8 h-px bg-foreground/30" />
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display leading-[1.1] tracking-tight mb-4 sm:mb-5">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display leading-[1.1] tracking-tight mb-3 sm:mb-4">
             A Proven Process That{" "}
             <span className="text-stroke">Delivers Results</span>
           </h2>
@@ -90,7 +90,7 @@ export function AboutProcessSection() {
           {/* Vertical connector line (lg only) */}
           <div className="hidden lg:block absolute left-1/2 -translate-x-1/2 top-4 bottom-4 w-px bg-foreground/10 z-0" />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3 sm:gap-4 lg:gap-5">
             {stages.map((stage, i) => {
               const Icon = stage.icon;
               const isLeft = i % 2 === 0;
@@ -113,7 +113,7 @@ export function AboutProcessSection() {
                   </div>
 
                   {/* Card */}
-                  <div className="group flex items-start gap-3 sm:gap-4 p-5 sm:p-6 rounded-2xl border border-foreground/10 hover:border-foreground/25 hover:bg-foreground/[0.02] transition-all duration-300 cursor-default lg:max-w-[calc(50%-3rem)] w-full">
+                  <div className="group flex items-start gap-3 sm:gap-4 p-4 sm:p-5 rounded-2xl border border-foreground/10 hover:border-foreground/25 hover:bg-foreground/[0.02] transition-all duration-300 cursor-default lg:max-w-[calc(50%-3rem)] w-full">
                     <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-foreground/5 flex items-center justify-center shrink-0 group-hover:bg-foreground/10 transition-colors">
                       <Icon className="w-4 h-4 text-foreground" />
                     </div>

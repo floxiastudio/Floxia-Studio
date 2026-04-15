@@ -34,16 +34,17 @@ export default function ServicesPage() {
         description={
           <>
             <p>
-              At Floxia Studio, our service offering covers the entire digital build spectrum —
-              from brand-new website design and development to complex system integrations,
-              e-commerce ecosystems, and AI-powered automation. We are a single-source partner
-              for everything your business needs to succeed online.
+              At Floxia Studio, our service offering covers the entire digital
+              build spectrum from brand-new website design and development to
+              complex system integrations, e-commerce ecosystems, and AI-powered
+              automation. We are a single-source partner for everything your
+              business needs to succeed online.
             </p>
             <p>
-              No outsourcing. No fragmented handoffs between agencies. One expert team, one
-              vision, one exceptional result. Whatever your business model, industry, or
-              technology requirement — we have the skills, experience, and passion to build it
-              right.
+              No outsourcing. No fragmented handoffs between agencies. One
+              expert team, one vision, one exceptional result. Whatever your
+              business model, industry, or technology requirement, we have the
+              skills, experience, and passion to build it right.
             </p>
           </>
         }

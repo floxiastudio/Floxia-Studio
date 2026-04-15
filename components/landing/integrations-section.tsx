@@ -34,15 +34,15 @@ export function IntegrationsSection() {
   }, []);
 
   return (
-    <section id="integrations" ref={sectionRef} className="relative py-16 sm:py-20 lg:py-28 overflow-hidden">
+    <section id="integrations" ref={sectionRef} className="relative py-12 sm:py-16 lg:py-20 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
         {/* Header */}
         <div
-          className={`text-center max-w-3xl mx-auto mb-10 sm:mb-14 lg:mb-20 transition-all duration-700 ${
+          className={`text-center max-w-3xl mx-auto mb-8 sm:mb-10 lg:mb-12 transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <span className="inline-flex items-center gap-2 sm:gap-3 text-xs sm:text-sm font-mono text-muted-foreground mb-4 sm:mb-6">
+          <span className="inline-flex items-center gap-2 sm:gap-3 text-xs sm:text-sm font-mono text-muted-foreground mb-3 sm:mb-4">
             <span className="w-5 sm:w-8 h-px bg-foreground/30" />
             Integrations
             <span className="w-5 sm:w-8 h-px bg-foreground/30" />
@@ -67,7 +67,7 @@ export function IntegrationsSection() {
               {integrations.map((integration) => (
                 <div
                   key={`${integration.name}-${setIndex}`}
-                  className="shrink-0 px-4 sm:px-6 lg:px-8 py-4 sm:py-5 lg:py-6 border border-foreground/10 hover:border-foreground/30 hover:bg-foreground/[0.02] transition-all duration-300 group"
+                  className="shrink-0 px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5 border border-foreground/10 hover:border-foreground/30 hover:bg-foreground/[0.02] transition-all duration-300 group"
                 >
                   <div className="text-sm sm:text-base lg:text-lg font-medium group-hover:translate-x-1 transition-transform">
                     {integration.name}
@@ -88,7 +88,7 @@ export function IntegrationsSection() {
               {[...integrations].reverse().map((integration) => (
                 <div
                   key={`${integration.name}-reverse-${setIndex}`}
-                  className="shrink-0 px-4 sm:px-6 lg:px-8 py-4 sm:py-5 lg:py-6 border border-foreground/10 hover:border-foreground/30 hover:bg-foreground/[0.02] transition-all duration-300 group"
+                  className="shrink-0 px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5 border border-foreground/10 hover:border-foreground/30 hover:bg-foreground/[0.02] transition-all duration-300 group"
                 >
                   <div className="text-sm sm:text-base lg:text-lg font-medium group-hover:translate-x-1 transition-transform">
                     {integration.name}

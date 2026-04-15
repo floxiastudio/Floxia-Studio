@@ -43,7 +43,7 @@ export function AboutExpertiseSection() {
   }, []);
 
   return (
-    <section ref={ref} className="relative py-16 sm:py-20 lg:py-28 bg-background overflow-hidden border-t border-foreground/10">
+    <section ref={ref} className="relative py-12 sm:py-16 lg:py-20 bg-background overflow-hidden border-t border-foreground/10">
       <div className="absolute inset-0 pointer-events-none opacity-[0.02]"
         style={{
           backgroundImage: "linear-gradient(currentColor 1px, transparent 1px), linear-gradient(90deg, currentColor 1px, transparent 1px)",
@@ -54,12 +54,12 @@ export function AboutExpertiseSection() {
       <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
 
         {/* Header */}
-        <div className={`max-w-3xl mb-12 sm:mb-16 lg:mb-20 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-          <div className="flex items-center gap-3 text-xs sm:text-sm font-mono text-muted-foreground mb-4 sm:mb-6">
+        <div className={`max-w-3xl mb-8 sm:mb-10 lg:mb-12 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+          <div className="flex items-center gap-3 text-xs sm:text-sm font-mono text-muted-foreground mb-3 sm:mb-4">
             <span className="w-6 sm:w-8 h-px bg-foreground/30" />
             Our Expertise
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display leading-[1.1] tracking-tight mb-4 sm:mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display leading-[1.1] tracking-tight mb-3 sm:mb-5">
             Masters of Every Web Technology{" "}
             <span className="text-stroke">That Matters</span>
           </h2>
@@ -70,7 +70,7 @@ export function AboutExpertiseSection() {
         </div>
 
         {/* Two-column layout: description + tech grid */}
-        <div className="grid lg:grid-cols-[1fr,1.4fr] gap-10 sm:gap-14 lg:gap-24 items-start">
+        <div className="grid lg:grid-cols-[1fr,1.4fr] gap-8 sm:gap-10 lg:gap-16 items-start">
 
           {/* Left: paragraphs */}
           <div className="space-y-4 sm:space-y-5">

@@ -307,12 +307,11 @@ function ServiceSection({
     <div
       ref={ref}
       id={service.id}
-      className="relative border-t border-foreground/10 py-16 sm:py-20 lg:py-28 scroll-mt-[112px]"
+      className="relative border-t border-foreground/10 py-12 sm:py-14 lg:py-20 scroll-mt-[112px]"
     >
       {/* Section container */}
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
-        <div
-          className={`grid lg:grid-cols-2 gap-10 lg:gap-20 items-center ${
+        <div className={`grid lg:grid-cols-2 gap-8 lg:gap-16 items-center ${
             isReversed ? "lg:[&>*:first-child]:order-2" : ""
           }`}
         >
@@ -323,7 +322,7 @@ function ServiceSection({
             }`}
           >
             {/* Label row */}
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-4">
               <span className="font-mono text-xs text-muted-foreground">{service.number}</span>
               <span className="w-6 h-px bg-foreground/20" />
               <span className="px-2.5 py-0.5 rounded-full border border-foreground/15 font-mono text-xs text-muted-foreground">
@@ -332,7 +331,7 @@ function ServiceSection({
             </div>
 
             {/* Icon + Title */}
-            <div className="flex items-start gap-3 sm:gap-4 mb-4">
+            <div className="flex items-start gap-3 sm:gap-4 mb-3">
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-foreground/8 flex items-center justify-center shrink-0 mt-0.5 sm:mt-1">
                 <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-foreground" />
               </div>
@@ -342,17 +341,17 @@ function ServiceSection({
             </div>
 
             {/* Subtitle */}
-            <p className="text-xs sm:text-sm font-mono text-muted-foreground mb-5 pl-0 sm:pl-14 lg:pl-16">
+            <p className="text-xs sm:text-sm font-mono text-muted-foreground mb-3 pl-0 sm:pl-14 lg:pl-16">
               &quot;{service.subtitle}&quot;
             </p>
 
             {/* Lead */}
-            <p className="text-base sm:text-lg text-foreground/80 leading-relaxed mb-4 pl-0 sm:pl-14 lg:pl-16">
+            <p className="text-base sm:text-lg text-foreground/80 leading-relaxed mb-3 pl-0 sm:pl-14 lg:pl-16">
               {service.lead}
             </p>
 
             {/* Body paragraphs */}
-            <div className="space-y-3 pl-0 sm:pl-14 lg:pl-16 mb-8">
+            <div className="space-y-3 pl-0 sm:pl-14 lg:pl-16 mb-6">
               {service.paras.map((para, i) => (
                 <p
                   key={i}
@@ -385,13 +384,13 @@ function ServiceSection({
             }`}
           >
             {/* Abstract visual — hidden on mobile/tablet to save space */}
-            <div className="hidden lg:block mb-8">
+            <div className="hidden lg:block mb-6">
               <ServiceVisual number={service.number} icon={Icon} />
             </div>
 
             {/* Features card */}
-            <div className="p-6 sm:p-8 rounded-2xl border border-foreground/10 bg-foreground/[0.02]">
-              <span className="block font-mono text-xs text-muted-foreground uppercase tracking-widest mb-5">
+            <div className="p-5 sm:p-6 rounded-2xl border border-foreground/10 bg-foreground/[0.02]">
+              <span className="block font-mono text-xs text-muted-foreground uppercase tracking-widest mb-4">
                 What's Included
               </span>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3">
@@ -465,18 +464,18 @@ export function ServicesListSection() {
   return (
     <div>
       {/* ── Intro header ── */}
-      <section ref={headerRef} className="py-16 sm:py-20 lg:py-28 border-t border-foreground/10">
+      <section ref={headerRef} className="py-12 sm:py-14 lg:py-20 border-t border-foreground/10">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
           <div
             className={`max-w-4xl transition-all duration-1000 ${
               headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <div className="flex items-center gap-3 text-xs sm:text-sm font-mono text-muted-foreground mb-6">
+            <div className="flex items-center gap-3 text-xs sm:text-sm font-mono text-muted-foreground mb-4">
               <span className="w-6 sm:w-8 h-px bg-foreground/30" />
               10 Services · One Expert Team
             </div>
-            <h2 className="font-display text-3xl sm:text-5xl lg:text-7xl leading-[1.05] tracking-tight mb-5 sm:mb-8">
+            <h2 className="font-display text-3xl sm:text-5xl lg:text-7xl leading-[1.05] tracking-tight mb-4 sm:mb-6">
               Every service your business needs to{" "}
               <span className="text-stroke">dominate online</span>
             </h2>
@@ -489,7 +488,7 @@ export function ServicesListSection() {
 
           {/* Quick-stat row */}
           <div
-            className={`grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-10 sm:mt-14 transition-all duration-700 delay-300 ${
+            className={`grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-8 sm:mt-10 transition-all duration-700 delay-300 ${
               headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >

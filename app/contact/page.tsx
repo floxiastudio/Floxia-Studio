@@ -15,8 +15,14 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact Floxia Studio | Get a Free Web Design Quote USA",
-  description: "Ready to build your website? Contact Floxia Studio for a free consultation. Custom web design, Shopify, WordPress, AI integrations & more. Quick response guaranteed.",
-  keywords: ["hire web design agency USA", "get a website quote", "web development consultation", "contact web agency"],
+  description:
+    "Ready to build your website? Contact Floxia Studio for a free consultation. Custom web design, Shopify, WordPress, AI integrations & more. Quick response guaranteed.",
+  keywords: [
+    "hire web design agency USA",
+    "get a website quote",
+    "web development consultation",
+    "contact web agency",
+  ],
   robots: {
     index: true,
     follow: true,
@@ -31,19 +37,20 @@ export default function Home() {
       <Navigation />
       <HeroSection
         eyebrow="Contact Us"
-        headingLine1="Let's Build Something Great —"
+        headingLine1="Let's Build Something Great"
         headingLine2="Start the Conversation"
         description={
           <>
             <p>
-              You have a vision for your digital presence. We have the expertise to build it.
-              Whether you need a custom-coded web application, a high-converting Shopify store,
-              a powerful WordPress website, an AI chatbot integration, or a comprehensive digital
-              platform — Floxia Studio is ready to deliver it.
+              You have a vision for your digital presence. We have the expertise
+              to build it. Whether you need a custom-coded web application, a
+              high-converting Shopify store, a powerful WordPress website, an AI
+              chatbot integration, or a comprehensive digital platform, Floxia
+              Studio is ready to deliver it.
             </p>
             <p>
-              Reach out today for a free, no-obligation consultation with our team. We respond
-              to every inquiry within 24 hours.
+              Reach out today for a free, no-obligation consultation with our
+              team. We respond to every inquiry within 24 hours.
             </p>
           </>
         }

@@ -13,18 +13,21 @@ export function SocialProofSection() {
       ([entry]) => {
         if (entry.isIntersecting) setIsVisible(true);
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-16 sm:py-24 lg:py-32 bg-background overflow-hidden relative">
+    <section
+      ref={sectionRef}
+      className="py-10 sm:py-16 lg:py-20 bg-background overflow-hidden relative"
+    >
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
-        
-        <div className={`p-6 sm:p-12 lg:p-24 rounded-2xl sm:rounded-[2.5rem] lg:rounded-[3rem] bg-foreground text-background relative overflow-hidden transition-all duration-1000 ${isVisible ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 translate-y-12"}`}>
-          
+        <div
+          className={`p-6 sm:p-10 lg:p-16 rounded-2xl sm:rounded-[2.5rem] lg:rounded-[3rem] bg-foreground text-background relative overflow-hidden transition-all duration-1000 ${isVisible ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 translate-y-12"}`}
+        >
           {/* Decorative background circle */}
           <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-background/10 blur-[100px] rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none" />
 
@@ -34,10 +37,14 @@ export function SocialProofSection() {
                 Ready to build something extraordinary?
               </h2>
               <p className="text-sm sm:text-base lg:text-xl text-background/80 leading-relaxed mb-6 sm:mb-8 lg:mb-10 max-w-xl">
-                Join a growing list of businesses across the United States that have partnered with Floxia Studio to transform their online presence. From lean startups to established brands requiring complex ecosystems — we have the expertise to deliver exceptional results.
+                Join a growing list of businesses across the United States that
+                have partnered with Floxia Studio to transform their online
+                presence. From lean startups to established brands requiring
+                complex ecosystems, we have the expertise to deliver exceptional
+                results.
               </p>
             </div>
-            
+
             <div className="flex flex-col gap-4 sm:gap-5 lg:gap-6 lg:items-end w-full">
               <a
                 href="https://calendly.com/aithinkagents/30min"
@@ -55,7 +62,6 @@ export function SocialProofSection() {
               </a>
             </div>
           </div>
-          
         </div>
       </div>
     </section>

@@ -31,7 +31,7 @@ export function CtaSection() {
   };
 
   return (
-    <section ref={sectionRef} className="relative py-24 lg:py-32 overflow-hidden">
+    <section ref={sectionRef} className="relative py-16 lg:py-24 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div
           className={`relative border border-foreground transition-all duration-1000 ${
@@ -47,17 +47,17 @@ export function CtaSection() {
             }}
           />
           
-          <div className="relative z-10 px-8 lg:px-16 py-16 lg:py-24">
+          <div className="relative z-10 px-8 lg:px-16 py-10 lg:py-16">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
               {/* Left content */}
               <div className="flex-1">
-                <h2 className="text-4xl lg:text-7xl font-display tracking-tight mb-8 leading-[0.95]">
+                <h2 className="text-4xl lg:text-7xl font-display tracking-tight mb-6 leading-[0.95]">
                   Ready to build
                   <br />
                   something great?
                 </h2>
 
-                <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-xl">
+                <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-xl">
                   Join thousands of teams shipping faster with Floxia Studio.
                   Start free, scale infinitely.
                 </p>

@@ -94,12 +94,12 @@ export function MetricsSection() {
   }, []);
 
   return (
-    <section id="studio" ref={sectionRef} className="relative py-16 sm:py-20 lg:py-28 border-y border-foreground/10">
+    <section id="studio" ref={sectionRef} className="relative py-12 sm:py-16 lg:py-20 border-y border-foreground/10">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 sm:gap-6 lg:gap-8 mb-10 sm:mb-14 lg:mb-20">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 sm:gap-6 lg:gap-8 mb-8 sm:mb-10 lg:mb-12">
           <div>
-            <span className="inline-flex items-center gap-2 sm:gap-3 text-xs sm:text-sm font-mono text-muted-foreground mb-4 sm:mb-6">
+            <span className="inline-flex items-center gap-2 sm:gap-3 text-xs sm:text-sm font-mono text-muted-foreground mb-3 sm:mb-4">
               <span className="w-5 sm:w-8 h-px bg-foreground/30" />
               By the numbers
             </span>
@@ -128,7 +128,7 @@ export function MetricsSection() {
           {metrics.map((metric, index) => (
             <div
               key={metric.label}
-              className={`bg-background p-5 sm:p-8 lg:p-12 transition-all duration-700 ${
+              className={`bg-background p-5 sm:p-6 lg:p-8 transition-all duration-700 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}

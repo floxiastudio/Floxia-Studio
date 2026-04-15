@@ -45,15 +45,15 @@ export function FooterSection() {
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Main Footer */}
-        <div className="py-16 lg:py-24">
+        <div className="py-10 lg:py-16">
           <div className="grid grid-cols-2 md:grid-cols-6 gap-12 lg:gap-8">
             {/* Brand Column */}
             <div className="col-span-2">
-              <a href="#" className="inline-flex items-center gap-2 mb-6">
+              <a href="#" className="inline-flex items-center gap-2 mb-4">
                 <img src="/logo.png" alt="Logo" className="h-14 w-auto" />
               </a>
 
-              <p className="text-muted-foreground leading-relaxed mb-8 max-w-xs">
+              <p className="text-muted-foreground leading-relaxed mb-6 max-w-xs">
                 The platform for teams who ship. Build, deploy, and scale with
                 unprecedented velocity.
               </p>
@@ -76,8 +76,8 @@ export function FooterSection() {
             {/* Link Columns */}
             {Object.entries(footerLinks).map(([title, links]) => (
               <div key={title}>
-                <h3 className="text-sm font-medium mb-6">{title}</h3>
-                <ul className="space-y-4">
+                <h3 className="text-sm font-medium mb-4">{title}</h3>
+                <ul className="space-y-3">
                   {links.map((link) => (
                     <li key={link.name}>
                       <a
