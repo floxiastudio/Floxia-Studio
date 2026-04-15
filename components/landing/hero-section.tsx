@@ -37,7 +37,7 @@ const defaults: Required<HeroSectionProps> = {
   headingLine1: "Floxia Studio Builds",
   headingLine2: "What Businesses Need",
   description:
-    "We are Floxia Studio — a full-service web design and development agency based in the USA, crafting high-performance websites, e-commerce stores, and AI-integrated digital systems for ambitious brands worldwide.",
+    "We are Floxia Studio a full-service web design and development agency based in the USA, crafting high-performance websites, e-commerce stores, and AI-integrated digital systems for ambitious brands worldwide.",
   primaryCta: { label: "Start Your Project", href: "/onboarding" },
   secondaryCta: { label: "See Our Work", href: "#work" },
 };
