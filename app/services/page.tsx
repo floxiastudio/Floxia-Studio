@@ -16,9 +16,25 @@ export const metadata: Metadata = {
     "WordPress agency",
     "AI chatbot integration",
     "web design services USA",
+    "Next.js developers",
+    "e-commerce solutions",
+    "SEO optimization services",
   ],
   alternates: {
     canonical: "https://floxiastudio.com/services",
+  },
+  openGraph: {
+    title: "Web Design & Development Services | Floxia Studio",
+    description: "Expert web services engineered for business growth. Custom development, e-commerce, and AI automation.",
+    url: "https://floxiastudio.com/services",
+    siteName: "Floxia Studio",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Web Design & Development Services | Floxia Studio",
+    description: "Full-stack web services engineered for business growth.",
   },
 };
 

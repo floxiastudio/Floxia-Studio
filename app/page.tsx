@@ -30,16 +30,26 @@ export const metadata: Metadata = {
     "Next.js agency",
     "Shopify agency",
     "AI web development",
+    "Floxia Studio",
+    "full-stack development company",
   ],
   alternates: {
     canonical: "https://floxiastudio.com/",
   },
   openGraph: {
-    title: "Floxia Studio We Build Websites That Work Harder",
+    title: "Floxia Studio | We Build Websites That Work Harder",
     description:
       "From custom-coded Next.js apps to Shopify stores and WordPress sites Floxia Studio delivers fast, secure, AI-powered websites tailored to your business goals.",
     url: "https://floxiastudio.com/",
+    siteName: "Floxia Studio",
+    locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Floxia Studio | Custom Web Design & Development",
+    description: "High-performance websites and AI digital systems for ambitious brands.",
+    creator: "@floxiastudio",
   },
 };
 
