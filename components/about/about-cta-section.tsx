@@ -33,7 +33,7 @@ export function AboutCtaSection() {
       />
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
-          className={`p-8 sm:p-12 lg:p-16 rounded-3xl bg-foreground text-primary-foreground relative overflow-hidden transition-all duration-1000 ${isVisible ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 translate-y-12"}`}
+        <div className={`p-8 sm:p-12 lg:p-16 rounded-3xl bg-foreground text-primary-foreground relative overflow-hidden transition-all duration-1000 ${isVisible ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 translate-y-12"}`}>
           {/* Decorative blur */}
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-foreground/10 blur-[100px] rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none" />
 
