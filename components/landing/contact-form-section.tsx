@@ -66,12 +66,28 @@ export function ContactFormSection() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    setIsSubmitting(false);
-    setIsSuccess(true);
-    toast.success("Message sent successfully! We'll get back to you soon.");
-    form.reset();
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
+      setIsSuccess(true);
+      toast.success("Message sent successfully! We'll get back to you soon.");
+      form.reset();
+    } catch (error) {
+      toast.error("Something went wrong. Please try again later.");
+      console.error("Email error:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (

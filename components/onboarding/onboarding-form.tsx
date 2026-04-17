@@ -366,6 +366,7 @@ export function OnboardingForm() {
   const [currentStep, setCurrentStep] = useState(0);
   const [formState, setFormState] = useState<Record<string, any>>({});
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [copied, setCopied] = useState(false);
 
   const formBodyRef = useRef<HTMLDivElement>(null);
@@ -513,10 +514,41 @@ export function OnboardingForm() {
     );
   };
 
-  const handleNext = () => {
+  const handleNext = async () => {
+    // Validate required fields for current step
+    const currentFields = STEPS[currentStep].fields;
+    const missingFields = currentFields.filter((f: any) => {
+      if (f.type === "row") {
+        return f.children.some((c: any) => c.req && !formState[c.id]);
+      }
+      return f.req && !formState[f.id];
+    });
+
+    if (missingFields.length > 0) {
+      alert("Please fill in all required fields marked with *");
+      return;
+    }
+
     setFormState((prev) => ({ ...prev, [`__done_${currentStep}`]: true }));
+
     if (currentStep === STEPS.length - 1) {
-      setIsSuccess(true);
+      setIsSubmitting(true);
+      try {
+        const response = await fetch("/api/onboarding", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formState),
+        });
+
+        if (!response.ok) throw new Error("Submission failed");
+
+        setIsSuccess(true);
+      } catch (error) {
+        alert("Something went wrong. Your data is still in the form. Please try again.");
+        console.error("Onboarding error:", error);
+      } finally {
+        setIsSubmitting(false);
+      }
     } else {
       setCurrentStep((c) => c + 1);
     }
@@ -661,8 +693,12 @@ export function OnboardingForm() {
                 Back
               </Button>
             )}
-            <Button className="flex-1 sm:flex-none h-12 px-8 rounded-full bg-foreground text-background hover:bg-foreground/90 shadow-lg hover:shadow-xl transition-all" onClick={handleNext}>
-              {currentStep === STEPS.length - 1 ? "Submit questionnaire" : "Continue to next step"}
+            <Button 
+              className="flex-1 sm:flex-none h-12 px-8 rounded-full bg-foreground text-background hover:bg-foreground/90 shadow-lg hover:shadow-xl transition-all disabled:opacity-50" 
+              onClick={handleNext}
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "Submitting..." : currentStep === STEPS.length - 1 ? "Submit questionnaire" : "Continue to next step"}
             </Button>
           </div>
         </div>
