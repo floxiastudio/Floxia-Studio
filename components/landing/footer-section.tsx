@@ -17,14 +17,18 @@ const footerLinks = {
     { name: "Status", href: "#" },
   ],
   Company: [
-    { name: "About", href: "#" },
-    { name: "Blog", href: "#" },
+    { name: "About", href: "/about" },
+    { name: "Blog", href: "/blog" },
     { name: "Careers", href: "#", badge: "Hiring" },
     { name: "Contact", href: "#" },
   ],
   Legal: [
-    { name: "Privacy", href: "#" },
-    { name: "Terms", href: "#" },
+    { name: "Privacy", href: "/privacy" },
+    { name: "Terms", href: "/terms" },
+    { name: "Cookies", href: "/cookies" },
+    { name: "Disclaimer", href: "/disclaimer" },
+    { name: "GDPR & CCPA", href: "/gdpr-ccpa" },
+    { name: "Refund Policy", href: "/refund-policy" },
     { name: "Security", href: "#security" },
   ],
 };
