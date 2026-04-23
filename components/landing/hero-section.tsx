@@ -128,7 +128,7 @@ export function HeroSection({
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8"
             }`}
-            style={{ fontSize: "clamp(1.75rem, 5.5vw, 6.5rem)" }}
+            style={{ fontSize: "clamp(1.75rem, 4.5vw, 5.2rem)" }}
           >
             {/* Line 1 */}
             <span className="block">{headingLine1}</span>
