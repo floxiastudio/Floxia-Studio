@@ -193,7 +193,7 @@ export const niches: Record<string, NicheData> = {
       headline: "We're Selective About Who We Work With, And That's By Design",
       greatFit: [
         "Private-pay therapists building a sustainable practice",
-        "Niche specialists: trauma, couples, anxiety, EMDR, grief, perinatal, LGBTQ+",
+        "Niche specialists: trauma, couples, anxiety, EMDR, grief, perinatal",
         "Therapists launching a new practice needing authority fast",
         "Group practices ready to scale professionally",
         "Clinicians who value quality and understand investment",
@@ -267,6 +267,12 @@ export const niches: Record<string, NicheData> = {
         role: "Group Practice Owner",
         location: "Atlanta, GA",
         text: "Consultations are up 40% compared to last year. Our site finally communicates who we are professionally.",
+      },
+      {
+        author: "Dr. David S., PsyD",
+        role: "Clinical Psychologist",
+        location: "San Francisco, CA",
+        text: "The ROI was immediate. I was hesitant about the investment, but the quality of clients I'm attracting now is significantly higher. They come in already trusting my expertise.",
       },
     ],
   },

@@ -15,7 +15,7 @@ export function LandingHero({ niche }: { niche: NicheData }) {
   }, []);
 
   return (
-    <section className="relative flex flex-col justify-center overflow-hidden min-h-[100svh] bg-background">
+    <section className="relative flex flex-col justify-center overflow-hidden min-h-[90svh] bg-background">
       {/* Animated sphere behind content */}
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[320px] h-[320px] sm:w-[480px] sm:h-[480px] lg:w-[750px] lg:h-[750px] opacity-20 sm:opacity-30 lg:opacity-40 pointer-events-none">
         <AnimatedSphere />
@@ -39,7 +39,7 @@ export function LandingHero({ niche }: { niche: NicheData }) {
         ))}
       </div>
 
-      <div className="relative z-10 max-w-[1400px] mx-auto w-full px-4 sm:px-6 lg:px-12 pt-16 pb-8 lg:py-24">
+      <div className="relative z-10 max-w-[1400px] mx-auto w-full px-4 sm:px-6 lg:px-12 pt-10 pb-6 lg:pt-16 lg:pb-12 text-center flex flex-col items-center">
         {/* Eyebrow */}
         <div
           className={`mb-4 sm:mb-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
@@ -47,23 +47,24 @@ export function LandingHero({ niche }: { niche: NicheData }) {
           <span className="inline-flex items-center gap-2 sm:gap-3 text-xs sm:text-sm font-mono text-muted-foreground uppercase tracking-[0.2em]">
             <span className="w-5 sm:w-8 h-px bg-foreground/30" />
             {niche.hero.eyebrow}
+            <span className="w-5 sm:w-8 h-px bg-foreground/30" />
           </span>
         </div>
 
         {/* Headline */}
-        <div className="mb-4 sm:mb-8 lg:mb-10 max-w-[90%] lg:max-w-[80%]">
+        <div className="mb-4 sm:mb-8 lg:mb-10 max-w-4xl mx-auto">
           <h1
             className={`font-display leading-[1.1] tracking-tight transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-            style={{ fontSize: "clamp(2rem, 4vw, 4.2rem)" }}
+            style={{ fontSize: "clamp(2rem, 4vw, 4.1rem)" }}
           >
             {niche.hero.headline}
           </h1>
         </div>
 
         {/* Subheadline + CTAs */}
-        <div className="flex flex-col gap-6 sm:gap-8 lg:grid lg:grid-cols-2 lg:gap-20 lg:items-end">
+        <div className="flex flex-col items-center gap-8 max-w-3xl mx-auto">
           <div
-            className={`text-sm sm:text-base lg:text-xl text-muted-foreground leading-relaxed max-w-xl transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+            className={`text-sm sm:text-base lg:text-xl text-muted-foreground leading-relaxed transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
             {niche.hero.subheadline}
             <p className="mt-4 text-xs italic font-medium opacity-70">
@@ -72,7 +73,7 @@ export function LandingHero({ niche }: { niche: NicheData }) {
           </div>
 
           <div
-            className={`flex flex-col xs:flex-row sm:flex-row items-stretch xs:items-center sm:items-center gap-3 transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+            className={`flex flex-col xs:flex-row sm:flex-row items-center justify-center gap-3 w-full transition-all duration-700 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
             <Link href="#cta" className="w-full sm:w-auto">
               <Button

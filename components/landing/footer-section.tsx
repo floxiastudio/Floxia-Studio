@@ -26,6 +26,7 @@ const footerLinks: Record<string, FooterLink[]> = {
     { name: "Terms", href: "/terms" },
     { name: "Cookies", href: "/cookies" },
   ],
+  "Special Industries": [{ name: "Therapists", href: "/therapists" }],
 };
 
 export function FooterSection() {

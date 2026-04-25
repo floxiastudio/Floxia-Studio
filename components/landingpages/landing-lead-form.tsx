@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { useInView } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -16,6 +17,10 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Shield, Send, CheckCircle, ArrowRight } from "lucide-react";
 
 export function LandingLeadForm() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const isVisibleHeader = isInView;
+  
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -40,13 +45,19 @@ export function LandingLeadForm() {
   }
 
   return (
-    <section id="cta" className="py-24 lg:py-32 bg-background relative overflow-hidden">
+    <section id="cta" className="py-12 lg:py-16 bg-background relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-[1400px] mx-auto lg:px-12 flex flex-col lg:flex-row gap-20">
           
           <div className="lg:w-1/3">
              <span className="inline-block text-[10px] font-mono uppercase tracking-[0.4em] text-primary mb-6">Next Step</span>
-             <h2 className="text-4xl md:text-6xl font-display font-bold leading-[1.1] mb-10">Start Your Practice Transformation</h2>
+             <h2
+               ref={ref}
+               className={`font-display leading-[1.1] tracking-tight transition-all duration-1000 ${isVisibleHeader ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+               style={{ fontSize: "clamp(2rem, 4vw, 3.1rem)" }}
+             >
+               Start Your Practice Transformation
+             </h2>
              <p className="text-muted-foreground text-lg leading-relaxed mb-12 opacity-80">
                 This is not a generic contact form. This is your first step toward a strategic digital presence. We take selection seriously to ensure we deliver maximum ROI for our clients.
              </p>
@@ -97,7 +108,6 @@ export function LandingLeadForm() {
                         <SelectItem value="couples">Couples</SelectItem>
                         <SelectItem value="depression">Depression</SelectItem>
                         <SelectItem value="grief">Grief</SelectItem>
-                        <SelectItem value="lgbtq">LGBTQ+</SelectItem>
                         <SelectItem value="perinatal">Perinatal</SelectItem>
                         <SelectItem value="other">Other</SelectItem>
                       </SelectContent>
