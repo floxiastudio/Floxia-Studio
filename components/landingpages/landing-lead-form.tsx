@@ -14,7 +14,9 @@ import {
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Shield, Send, CheckCircle, ArrowRight } from "lucide-react";
+import { Shield, Send, CheckCircle, ArrowRight, Loader2 } from "lucide-react";
+import { sendLandingLead } from "@/app/actions/send-landing-lead";
+import { toast } from "sonner";
 
 export function LandingLeadForm() {
   const ref = useRef(null);
@@ -22,10 +24,23 @@ export function LandingLeadForm() {
   const isVisibleHeader = isInView;
   
   const [submitted, setSubmitted] = useState(false);
+  const [isPending, setIsPending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsPending(true);
+
+    const formData = new FormData(e.currentTarget);
+    const result = await sendLandingLead(formData);
+
+    setIsPending(false);
+
+    if (result.success) {
+      setSubmitted(true);
+      toast.success("Application sent successfully!");
+    } else {
+      toast.error(result.error || "Failed to send application. Please try again.");
+    }
   };
 
   if (submitted) {
@@ -83,23 +98,23 @@ export function LandingLeadForm() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                   <div className="space-y-4">
                     <Label htmlFor="name" className="text-xs font-mono uppercase tracking-widest opacity-60">Full Name *</Label>
-                    <Input id="name" placeholder="Name" required className="rounded-none border-0 border-b border-foreground/20 bg-transparent px-0 h-12 focus-visible:ring-0 focus-visible:border-primary transition-colors text-lg" />
+                    <Input id="name" name="name" placeholder="Name" required className="rounded-none border-0 border-b border-foreground/20 bg-transparent px-0 h-12 focus-visible:ring-0 focus-visible:border-primary transition-colors text-lg" />
                   </div>
                   <div className="space-y-4">
                     <Label htmlFor="email" className="text-xs font-mono uppercase tracking-widest opacity-60">Email Address *</Label>
-                    <Input id="email" type="email" placeholder="Email" required className="rounded-none border-0 border-b border-foreground/20 bg-transparent px-0 h-12 focus-visible:ring-0 focus-visible:border-primary transition-colors text-lg" />
+                    <Input id="email" name="email" type="email" placeholder="Email" required className="rounded-none border-0 border-b border-foreground/20 bg-transparent px-0 h-12 focus-visible:ring-0 focus-visible:border-primary transition-colors text-lg" />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                   <div className="space-y-4">
                     <Label htmlFor="practice" className="text-xs font-mono uppercase tracking-widest opacity-60">Practice Name</Label>
-                    <Input id="practice" placeholder="Practice" className="rounded-none border-0 border-b border-foreground/20 bg-transparent px-0 h-12 focus-visible:ring-0 focus-visible:border-primary transition-colors text-lg" />
+                    <Input id="practice" name="practice" placeholder="Practice" className="rounded-none border-0 border-b border-foreground/20 bg-transparent px-0 h-12 focus-visible:ring-0 focus-visible:border-primary transition-colors text-lg" />
                   </div>
                   <div className="space-y-4">
                     <Label className="text-xs font-mono uppercase tracking-widest opacity-60">Specialty *</Label>
-                    <Select required>
-                      <SelectTrigger className="rounded-none border-0 border-b border-foreground/20 bg-transparent px-0 h-12 focus-visible:ring-0 text-lg">
+                    <Select name="specialty" required>
+                      <SelectTrigger className="w-full rounded-none border-0 border-b border-foreground/20 bg-transparent px-0 h-12 focus-visible:ring-0 text-lg">
                         <SelectValue placeholder="Select Specialty" />
                       </SelectTrigger>
                       <SelectContent>
@@ -115,46 +130,57 @@ export function LandingLeadForm() {
                   </div>
                 </div>
 
-                <div className="space-y-6 pt-4">
-                  <Label className="text-xs font-mono uppercase tracking-widest opacity-60">Do you currently have a website? *</Label>
-                  <RadioGroup defaultValue="no" className="flex flex-col sm:flex-row gap-10">
-                    <div className="flex items-center space-x-3 group cursor-pointer">
-                      <RadioGroupItem value="yes" id="r1" className="border-foreground/20 text-primary" />
-                      <Label htmlFor="r1" className="font-medium cursor-pointer group-hover:text-primary transition-colors">Yes (Redesign)</Label>
-                    </div>
-                    <div className="flex items-center space-x-3 group cursor-pointer">
-                      <RadioGroupItem value="no" id="r2" className="border-foreground/20 text-primary" />
-                      <Label htmlFor="r2" className="font-medium cursor-pointer group-hover:text-primary transition-colors">No (New Build)</Label>
-                    </div>
-                  </RadioGroup>
-                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+                  <div className="space-y-4">
+                    <Label className="text-xs font-mono uppercase tracking-widest opacity-60">Do you currently have a website? *</Label>
+                    <RadioGroup name="hasWebsite" defaultValue="no" className="flex flex-col sm:flex-row gap-10">
+                      <div className="flex items-center space-x-3 group cursor-pointer">
+                        <RadioGroupItem value="yes" id="r1" className="border-foreground/20 text-primary" />
+                        <Label htmlFor="r1" className="font-medium cursor-pointer group-hover:text-primary transition-colors">Yes (Redesign)</Label>
+                      </div>
+                      <div className="flex items-center space-x-3 group cursor-pointer">
+                        <RadioGroupItem value="no" id="r2" className="border-foreground/20 text-primary" />
+                        <Label htmlFor="r2" className="font-medium cursor-pointer group-hover:text-primary transition-colors">No (New Build)</Label>
+                      </div>
+                    </RadioGroup>
+                  </div>
 
-                <div className="space-y-4">
-                  <Label className="text-xs font-mono uppercase tracking-widest opacity-60">Main Challenge *</Label>
-                  <Select required>
-                    <SelectTrigger className="rounded-none border-0 border-b border-foreground/20 bg-transparent px-0 h-12 focus-visible:ring-0 text-lg">
-                      <SelectValue placeholder="Select Challenge" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="google">Not showing on Google</SelectItem>
-                      <SelectItem value="inquiries">Too few inquiries</SelectItem>
-                      <SelectItem value="wrong-clients">Wrong type of clients</SelectItem>
-                      <SelectItem value="outdated">Website looks outdated</SelectItem>
-                      <SelectItem value="launching">Just launching</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
+                  <div className="space-y-4">
+                    <Label className="text-xs font-mono uppercase tracking-widest opacity-60">Main Challenge *</Label>
+                    <Select name="challenge" required>
+                      <SelectTrigger className="w-full rounded-none border-0 border-b border-foreground/20 bg-transparent px-0 h-12 focus-visible:ring-0 text-lg">
+                        <SelectValue placeholder="Select Challenge" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="google">Not showing on Google</SelectItem>
+                        <SelectItem value="inquiries">Too few inquiries</SelectItem>
+                        <SelectItem value="wrong-clients">Wrong type of clients</SelectItem>
+                        <SelectItem value="outdated">Website looks outdated</SelectItem>
+                        <SelectItem value="launching">Just launching</SelectItem>
+                        <SelectItem value="other">Other</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
                 </div>
 
                 <div className="space-y-4">
                   <Label htmlFor="notes" className="text-xs font-mono uppercase tracking-widest opacity-60">Context & Vision</Label>
-                  <Textarea id="notes" placeholder="Tell us more about your practice goals..." className="rounded-none border-0 border-b border-foreground/20 bg-transparent px-0 min-h-[100px] focus-visible:ring-0 focus-visible:border-primary transition-colors text-lg resize-none" />
+                  <Textarea id="notes" name="notes" placeholder="Tell us more about your practice goals..." className="rounded-none border-0 border-b border-foreground/20 bg-transparent px-0 min-h-[100px] focus-visible:ring-0 focus-visible:border-primary transition-colors text-lg resize-none" />
                 </div>
 
                 <div className="pt-10">
-                  <Button type="submit" size="lg" className="w-full py-10 text-xl rounded-full font-bold bg-foreground text-background hover:bg-foreground/90 transition-all duration-500 shadow-2xl group">
-                    Send Application
-                    <ArrowRight className="ml-3 h-6 w-6 transition-transform group-hover:translate-x-2" />
+                  <Button type="submit" size="lg" disabled={isPending} className="w-full py-10 text-xl rounded-full font-bold bg-foreground text-background hover:bg-foreground/90 transition-all duration-500 shadow-2xl group disabled:opacity-70">
+                    {isPending ? (
+                      <>
+                        Sending Application...
+                        <Loader2 className="ml-3 h-6 w-6 animate-spin" />
+                      </>
+                    ) : (
+                      <>
+                        Send Application
+                        <ArrowRight className="ml-3 h-6 w-6 transition-transform group-hover:translate-x-2" />
+                      </>
+                    )}
                   </Button>
                 </div>
               </form>
