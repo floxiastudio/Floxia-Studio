@@ -628,13 +628,17 @@ export function OnboardingForm() {
       <div className="rounded-3xl border border-border/80 bg-background/95 backdrop-blur-xl shadow-2xl overflow-hidden min-h-[500px] flex flex-col">
         {/* Header */}
         <div className="p-5 md:p-8 border-b border-border/50 bg-foreground/[0.02]">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-xl bg-foreground flex items-center justify-center">
-              <span className="text-background font-bold text-lg">F</span>
-            </div>
-            <div>
-              <div className="font-bold">Floxia Studio</div>
-              <div className="text-xs text-muted-foreground">Client onboarding</div>
+          <div className="flex items-center justify-between gap-3 mb-6">
+            <Link href="/" className="flex items-center gap-2">
+              <img 
+                src="/logo.png" 
+                alt="Floxia Studio" 
+                className="h-9 sm:h-10 w-auto"
+              />
+            </Link>
+            <div className="text-right">
+              <div className="font-bold text-sm">Floxia Studio</div>
+              <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Client onboarding</div>
             </div>
           </div>
           <h1 className="text-2xl md:text-3xl font-display font-bold mb-1">New project questionnaire</h1>

@@ -62,6 +62,12 @@ export type NicheData = {
     role: string;
     location: string;
   }[];
+  schema?: {
+    businessDescription: string;
+    catalogName: string;
+    offerName: string;
+    offerDescription: string;
+  };
 };
 
 export const niches: Record<string, NicheData> = {
@@ -77,6 +83,7 @@ export const niches: Record<string, NicheData> = {
         "Private Practice SEO",
         "HIPAA Compliant Web Design",
         "Mental Health Website Design",
+        "Conversion Rate Optimization",
       ],
     },
     hero: {
@@ -217,24 +224,29 @@ export const niches: Record<string, NicheData> = {
           "Typically 4-6 weeks from strategy call to launch, depending on feedback turnaround time.",
       },
       {
-        question: "Do I need to write my own copy?",
+        question: "Do I need to write my own copy for my therapy website?",
         answer:
           "No. Conversion-focused copywriting is fully included. We interview you and write everything tailored to your ideal clients.",
       },
       {
         question: "Will my therapist website rank on Google?",
         answer:
-          "We build a full local SEO foundation from day one. Meaningful rankings typically appear within 3-6 months.",
+          "We build a full local SEO foundation from day one, including keyword optimization, schema markup, and Google Business Profile guidance. Meaningful rankings typically appear within 3-6 months.",
       },
       {
         question: "Is the website HIPAA compliant?",
         answer:
-          "We build HIPAA-aware contact forms and avoid storing sensitive data on your site. We recommend pairing with a HIPAA-compliant email provider.",
+          "We build HIPAA-aware contact forms and avoid storing sensitive client data on your website. We recommend pairing with a HIPAA-compliant email provider for full compliance.",
       },
       {
-        question: "What does it cost?",
+        question: "What does a therapist website design cost?",
         answer:
-          "Our Private Practice Growth Website package starts at $2,000 and includes full strategy, design, copy, and SEO.",
+          "Our Private Practice Growth Website package starts at $2,000 and includes strategy, custom design, copywriting, SEO, scheduling integration, and 30-day post-launch support.",
+      },
+      {
+        question: "Can you redesign my existing therapist website?",
+        answer:
+          "Yes. Many of our projects are full redesigns of outdated or underperforming therapist websites. The process is the same — strategy first, then design.",
       },
     ],
     testimonials: [
@@ -275,5 +287,13 @@ export const niches: Record<string, NicheData> = {
         text: "The ROI was immediate. I was hesitant about the investment, but the quality of clients I'm attracting now is significantly higher. They come in already trusting my expertise.",
       },
     ],
+    schema: {
+      businessDescription:
+        "Strategic website design and SEO services exclusively for private practice therapists across the USA.",
+      catalogName: "Private Practice Growth Website",
+      offerName: "Private Practice Growth Website Package",
+      offerDescription:
+        "Custom 5-8 page website with strategy, SEO, copywriting, HIPAA-aware forms, and scheduling integration for therapists.",
+    },
   },
 };

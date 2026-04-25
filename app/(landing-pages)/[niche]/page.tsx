@@ -60,7 +60,7 @@ export default async function NicheLandingPage({ params }: PageProps) {
         "@type": "ProfessionalService",
         "@id": "https://floxiastudio.com/#business",
         "name": "Floxia Studio",
-        "description": nicheData.seo.description,
+        "description": nicheData.schema?.businessDescription || nicheData.seo.description,
         "url": "https://floxiastudio.com",
         "email": "sales@floxiastudio.com",
         "priceRange": "$$",
@@ -71,13 +71,13 @@ export default async function NicheLandingPage({ params }: PageProps) {
         "knowsAbout": nicheData.seo.keywords,
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
-          "name": nicheData.pricing.packageName,
+          "name": nicheData.schema?.catalogName || nicheData.pricing.packageName,
           "itemListElement": [{
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": nicheData.pricing.packageName,
-              "description": nicheData.pricing.subheadline,
+              "name": nicheData.schema?.offerName || nicheData.pricing.packageName,
+              "description": nicheData.schema?.offerDescription || nicheData.pricing.subheadline,
               "price": "2000",
               "priceCurrency": "USD",
               "eligibleRegion": "US"
