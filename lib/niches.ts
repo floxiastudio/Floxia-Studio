@@ -62,6 +62,11 @@ export type NicheData = {
     role: string;
     location: string;
   }[];
+  builtSpecifically: {
+    title: string;
+    description: string;
+    items: string[];
+  };
   schema?: {
     businessDescription: string;
     catalogName: string;
@@ -287,6 +292,16 @@ export const niches: Record<string, NicheData> = {
         text: "The ROI was immediate. I was hesitant about the investment, but the quality of clients I'm attracting now is significantly higher. They come in already trusting my expertise.",
       },
     ],
+    builtSpecifically: {
+      title: "Built Specifically for the Modern Therapist",
+      description: "We don't just build websites; we build specialized growth systems that speak the language of private practice.",
+      items: [
+        "HIPAA-compliant form handling and data security",
+        "Direct integration with EHR systems like SimplePractice and Jane",
+        "Conversion-optimized copy that resonates with clients in need",
+        "Local SEO specifically targeting therapy-related keywords",
+      ],
+    },
     schema: {
       businessDescription:
         "Strategic website design and SEO services exclusively for private practice therapists across the USA.",
